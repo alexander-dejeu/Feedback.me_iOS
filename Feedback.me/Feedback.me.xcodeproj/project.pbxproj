@@ -14,6 +14,9 @@
 		FA0811BA1E1F3ABA00C9D314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0811B81E1F3ABA00C9D314 /* LaunchScreen.storyboard */; };
 		FA0811C51E1F3ABA00C9D314 /* Feedback_meTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0811C41E1F3ABA00C9D314 /* Feedback_meTests.swift */; };
 		FA0811D01E1F3ABA00C9D314 /* Feedback_meUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0811CF1E1F3ABA00C9D314 /* Feedback_meUITests.swift */; };
+		FA0811E01E1F3B5500C9D314 /* Custom Elements in Resources */ = {isa = PBXBuildFile; fileRef = FA0811DD1E1F3B5500C9D314 /* Custom Elements */; };
+		FA0811E11E1F3B5500C9D314 /* Helpers in Resources */ = {isa = PBXBuildFile; fileRef = FA0811DE1E1F3B5500C9D314 /* Helpers */; };
+		FA0811E21E1F3B5500C9D314 /* View Controllers in Resources */ = {isa = PBXBuildFile; fileRef = FA0811DF1E1F3B5500C9D314 /* View Controllers */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		FA0811CB1E1F3ABA00C9D314 /* Feedback.meUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Feedback.meUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0811CF1E1F3ABA00C9D314 /* Feedback_meUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback_meUITests.swift; sourceTree = "<group>"; };
 		FA0811D11E1F3ABA00C9D314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA0811DD1E1F3B5500C9D314 /* Custom Elements */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Custom Elements"; sourceTree = "<group>"; };
+		FA0811DE1E1F3B5500C9D314 /* Helpers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Helpers; sourceTree = "<group>"; };
+		FA0811DF1E1F3B5500C9D314 /* View Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "View Controllers"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 		FA0811AE1E1F3ABA00C9D314 /* Feedback.me */ = {
 			isa = PBXGroup;
 			children = (
+				FA0811DD1E1F3B5500C9D314 /* Custom Elements */,
+				FA0811DE1E1F3B5500C9D314 /* Helpers */,
+				FA0811DF1E1F3B5500C9D314 /* View Controllers */,
 				FA0811AF1E1F3ABA00C9D314 /* AppDelegate.swift */,
 				FA0811B11E1F3ABA00C9D314 /* ViewController.swift */,
 				FA0811B31E1F3ABA00C9D314 /* Main.storyboard */,
@@ -238,6 +247,9 @@
 				FA0811BA1E1F3ABA00C9D314 /* LaunchScreen.storyboard in Resources */,
 				FA0811B71E1F3ABA00C9D314 /* Assets.xcassets in Resources */,
 				FA0811B51E1F3ABA00C9D314 /* Main.storyboard in Resources */,
+				FA0811E01E1F3B5500C9D314 /* Custom Elements in Resources */,
+				FA0811E21E1F3B5500C9D314 /* View Controllers in Resources */,
+				FA0811E11E1F3B5500C9D314 /* Helpers in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
