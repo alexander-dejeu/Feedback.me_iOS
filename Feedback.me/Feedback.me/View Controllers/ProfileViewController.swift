@@ -13,8 +13,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var userProfile: ProfileCard!
     @IBOutlet weak var classesCollectionView: UICollectionView!
     
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
-    
+    var items: [Class] = [Class(title: "Calculus IV", instructor: "Mrs. Steingold"), Class(title: "European History", instructor: "Mr. Jewells"), Class(title: "French III", instructor: "Mme. Wildfong")]
     
     // MARK: - UICollectionViewDataSource protocol
     
@@ -23,16 +22,23 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         return self.items.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let cellWidth = (self.view.frame.width / 2) - 12
+        let cellHeight = cellWidth / 2.378
+        return CGSize(width: cellWidth, height: cellHeight);
+    }
+    
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClassCell", for: indexPath as IndexPath) as! ClassCollectionViewCell
-        
+        cell.classTitleLabel.text = items[indexPath.row].title
+        cell.classInstructorLabel.text = items[indexPath.row].instructor
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
 //        cell.myLabel.text = self.items[indexPath.item]
-        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
-        
+//        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
+        cell.styleCell()
         return cell
     }
     
