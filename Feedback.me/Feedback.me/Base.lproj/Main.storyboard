@@ -84,16 +84,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Abraham Lincoln High" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bir-MB-eXh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abraham Lincoln High" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bir-MB-eXh">
                                                 <rect key="frame" x="90" y="190" width="179" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="James.Fuller@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgW-hc-P08">
-                                                <rect key="frame" x="102" y="220" width="161" height="17"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="James.Fuller@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgW-hc-P08">
+                                                <rect key="frame" x="99" y="216" width="161" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -102,8 +100,12 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="IfH-my-NWn" firstAttribute="top" secondItem="ppK-pf-icF" secondAttribute="top" constant="16" id="4RY-SO-Cec"/>
+                                            <constraint firstItem="bir-MB-eXh" firstAttribute="top" secondItem="egX-mb-QgH" secondAttribute="bottom" constant="8" id="EnV-ES-QsX"/>
+                                            <constraint firstItem="bir-MB-eXh" firstAttribute="centerX" secondItem="egX-mb-QgH" secondAttribute="centerX" id="JIg-sA-86F"/>
+                                            <constraint firstItem="GgW-hc-P08" firstAttribute="top" secondItem="bir-MB-eXh" secondAttribute="bottom" constant="4" id="RdD-U7-Jul"/>
                                             <constraint firstAttribute="height" constant="264" id="bRW-7R-j7a"/>
                                             <constraint firstItem="egX-mb-QgH" firstAttribute="centerX" secondItem="IfH-my-NWn" secondAttribute="centerX" id="cdk-tS-qaG"/>
+                                            <constraint firstItem="GgW-hc-P08" firstAttribute="centerX" secondItem="bir-MB-eXh" secondAttribute="centerX" id="lia-Dw-FSV"/>
                                             <constraint firstItem="egX-mb-QgH" firstAttribute="top" secondItem="IfH-my-NWn" secondAttribute="bottom" constant="8" id="nHi-AW-nAP"/>
                                             <constraint firstItem="IfH-my-NWn" firstAttribute="centerX" secondItem="ppK-pf-icF" secondAttribute="centerX" id="tKL-YJ-Wdn"/>
                                             <constraint firstItem="2LQ-5o-jkq" firstAttribute="top" secondItem="ppK-pf-icF" secondAttribute="top" constant="8" id="ut4-Av-s7s"/>
