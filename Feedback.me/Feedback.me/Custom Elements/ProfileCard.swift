@@ -9,13 +9,22 @@
 import UIKit
 
 class ProfileCard: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    // MARK: IBOutlets
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var fullNameLabel : UILabel!
+    @IBOutlet weak var userEmailLabel : UILabel!
+    @IBOutlet weak var userSchoolLabel : UILabel!
+    
+    func filp(){
+        let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        
+        UIView.transition(with: self, duration: 1.0, options: transitionOptions, animations: {
+        })
     }
-    */
+    
+    func setupEdit(){
+        self.editButton.addTarget(self, action: #selector(filp), for: .touchUpInside)
+    }
+    
 
 }

@@ -84,6 +84,20 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Abraham Lincoln High" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bir-MB-eXh">
+                                                <rect key="frame" x="90" y="190" width="179" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="James.Fuller@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgW-hc-P08">
+                                                <rect key="frame" x="102" y="220" width="161" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -95,6 +109,12 @@
                                             <constraint firstItem="2LQ-5o-jkq" firstAttribute="top" secondItem="ppK-pf-icF" secondAttribute="top" constant="8" id="ut4-Av-s7s"/>
                                             <constraint firstItem="2LQ-5o-jkq" firstAttribute="leading" secondItem="ppK-pf-icF" secondAttribute="leading" constant="8" id="xfg-XH-HuK"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="editButton" destination="2LQ-5o-jkq" id="ufy-s1-Ygf"/>
+                                            <outlet property="fullNameLabel" destination="egX-mb-QgH" id="9gX-mW-Yf3"/>
+                                            <outlet property="userEmailLabel" destination="GgW-hc-P08" id="H8h-ao-2bc"/>
+                                            <outlet property="userSchoolLabel" destination="bir-MB-eXh" id="tI2-0K-6Wb"/>
+                                        </connections>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JPc-Iv-G7v">
                                         <rect key="frame" x="0.0" y="351" width="376" height="300"/>
@@ -153,18 +173,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abraham Lincoln High" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bir-MB-eXh">
-                                        <rect key="frame" x="99" y="198.5" width="179" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="James.Fuller@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgW-hc-P08">
-                                        <rect key="frame" x="108.5" y="224.5" width="161" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ppK-pf-icF" secondAttribute="trailing" constant="8" id="1tb-Ya-HKf"/>
@@ -173,14 +181,10 @@
                                     <constraint firstItem="gXk-EX-JWi" firstAttribute="top" secondItem="ppK-pf-icF" secondAttribute="bottom" constant="24" id="FQ0-1N-Dm0"/>
                                     <constraint firstItem="ppK-pf-icF" firstAttribute="leading" secondItem="fvu-DT-5gP" secondAttribute="leading" constant="8" id="FSM-sS-wH6"/>
                                     <constraint firstItem="gXk-EX-JWi" firstAttribute="centerX" secondItem="ppK-pf-icF" secondAttribute="centerX" id="T3b-8X-IAp"/>
-                                    <constraint firstItem="GgW-hc-P08" firstAttribute="centerX" secondItem="bir-MB-eXh" secondAttribute="centerX" id="T6X-th-uBQ"/>
-                                    <constraint firstItem="bir-MB-eXh" firstAttribute="top" secondItem="egX-mb-QgH" secondAttribute="bottom" constant="8" id="VDh-ek-Zam"/>
                                     <constraint firstItem="JPc-Iv-G7v" firstAttribute="top" secondItem="gXk-EX-JWi" secondAttribute="bottom" constant="26" id="b6X-wc-YK9"/>
-                                    <constraint firstItem="GgW-hc-P08" firstAttribute="top" secondItem="bir-MB-eXh" secondAttribute="bottom" constant="4" id="bKv-cI-m79"/>
                                     <constraint firstItem="JPc-Iv-G7v" firstAttribute="leading" secondItem="fvu-DT-5gP" secondAttribute="leading" id="etz-lY-QQP"/>
                                     <constraint firstAttribute="trailing" secondItem="JPc-Iv-G7v" secondAttribute="trailing" id="wnv-PI-tci"/>
                                     <constraint firstAttribute="bottom" secondItem="JPc-Iv-G7v" secondAttribute="bottom" constant="64" id="yL6-TY-iTl"/>
-                                    <constraint firstItem="bir-MB-eXh" firstAttribute="centerX" secondItem="egX-mb-QgH" secondAttribute="centerX" id="zjo-Qx-xYQ"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

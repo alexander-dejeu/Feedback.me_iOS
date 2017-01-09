@@ -28,6 +28,21 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         return CGSize(width: cellWidth, height: cellHeight);
     }
     
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+//        let cellCount = items.count
+//        let cellWidth = (self.view.frame.width / 2) - 12
+//        
+//        
+//
+////        let totalCellWidth = cellWidth * cellCount
+////        let totalSpacingWidth = CellSpacing * (cellCount - 1)
+////        
+////        let leftInset = (collectionViewWidth - CGFloat(totalCellWidth + totalSpacingWidth)) / 2;
+////        let rightInset = leftInset
+//        
+//        return UIEdgeInsetsMake(0, 12, 0, 12)
+//    }
+    
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -51,6 +66,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userProfile.setupEdit()
     }
 
     override func didReceiveMemoryWarning() {
