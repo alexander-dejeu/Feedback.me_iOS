@@ -198,7 +198,7 @@
                             <constraint firstItem="fvu-DT-5gP" firstAttribute="leading" secondItem="0DP-eZ-nDS" secondAttribute="leading" id="n7e-ix-lvq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="sLo-eM-j3R"/>
+                    <navigationItem key="navigationItem" id="VSu-2n-wrM" userLabel="Cant Remove"/>
                     <connections>
                         <outlet property="classesCollectionView" destination="JPc-Iv-G7v" id="UIY-9v-sKH"/>
                         <outlet property="userProfile" destination="ppK-pf-icF" id="EWx-I8-nkZ"/>
@@ -207,6 +207,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBF-Kn-FEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2156" y="1526.9865067466269"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8SU-gi-wvp">
+            <objects>
+                <viewController id="rFl-NU-0vc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ppz-fD-p1r"/>
+                        <viewControllerLayoutGuide type="bottom" id="dhC-B9-ZLb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Yb-8l-VRf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F9v-8S-aNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3092" y="1530"/>
         </scene>
         <!--Classrooms-->
         <scene sceneID="amd-vt-rJ2">
