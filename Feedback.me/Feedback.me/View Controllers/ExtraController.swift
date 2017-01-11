@@ -18,41 +18,7 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var customMakeSchoolFooter = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        var versionLabel : UILabel = UILabel(frame: CGRect(x: 32, y: 16, width: self.view.frame.width-64, height: 22))
-        var makeSchoolShoutoutLabel : UILabel = UILabel(frame: CGRect(x: 32, y: 16 + 5 + versionLabel.frame.height, width: self.view.frame.width-64, height: 20))
-        
-        versionLabel.textAlignment = .center
-        versionLabel.text = "Version 1.0"
-        makeSchoolShoutoutLabel.textAlignment = .center
-        makeSchoolShoutoutLabel.text = ""
-        var makeSchoolLabelString = NSMutableAttributedString(string: "Made with ♥ at Make School in San Francisco", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 15)])
-    
-//        makeSchoolLabelString.addAttribute(<#T##name: String##String#>, value: <#T##Any#>, range: <#T##NSRange#>)
-//        addAttribute(NSForegroundColorAttributeName, value: UIColor.red , range: range
-        makeSchoolLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor(red: 50.0/255.0, green: 177.0/255.0, blue: 225.0/255.0, alpha: 1.0), range: NSRange(location:15,length:11))
-        
-        makeSchoolLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor(red: 249.0/255.0, green: 124.0/255.0, blue: 84.0/255.0, alpha: 1.0), range: NSRange(location:10,length:1))
-        
-        makeSchoolShoutoutLabel.attributedText = makeSchoolLabelString
-        makeSchoolShoutoutLabel.minimumScaleFactor = 0.5
-        makeSchoolShoutoutLabel.adjustsFontSizeToFitWidth = true
-        makeSchoolShoutoutLabel.lineBreakMode = .byTruncatingTail
-        
-        customMakeSchoolFooter.addSubview(makeSchoolShoutoutLabel)
-        customMakeSchoolFooter.addSubview(versionLabel)
-        
-
-//        myMutableString = NSMutableAttributedString(string: myString, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 18.0)!])
-//
-//        myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor(), range: NSRange(location:2,length:4))
-        
-        // set label Attribute
-        
-//        labName.attributedText = myMutableString
-        
-//        customMakeSchoolFooter.backgroundColor = .orange
-        self.tableView.tableFooterView = customMakeSchoolFooter
+        self.tableView.tableFooterView = createMakeSchoolFooterView()
     }
     
     
@@ -66,6 +32,32 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     
+    //MARK: - Helpers
+    func createMakeSchoolFooterView() -> UIView {
+        let customMakeSchoolFooter = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        let versionLabel : UILabel = UILabel(frame: CGRect(x: 32, y: 16, width: self.view.frame.width-64, height: 22))
+        let makeSchoolShoutoutLabel : UILabel = UILabel(frame: CGRect(x: 32, y: 16 + 5 + versionLabel.frame.height, width: self.view.frame.width-64, height: 20))
+        
+        let versionlLabelString = NSMutableAttributedString(string: "Version 1.0", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 17)])
+        
+        let makeSchoolLabelString = NSMutableAttributedString(string: "Made with ♥ at Make School in San Francisco", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 15)])
+        makeSchoolLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor(red: 50.0/255.0, green: 177.0/255.0, blue: 225.0/255.0, alpha: 1.0), range: NSRange(location:15,length:11))
+        makeSchoolLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor(red: 249.0/255.0, green: 124.0/255.0, blue: 84.0/255.0, alpha: 1.0), range: NSRange(location:10,length:1))
+        
+        versionLabel.textAlignment = .center
+        versionLabel.attributedText = versionlLabelString
+        
+        makeSchoolShoutoutLabel.textAlignment = .center
+        makeSchoolShoutoutLabel.attributedText = makeSchoolLabelString
+        makeSchoolShoutoutLabel.minimumScaleFactor = 0.5
+        makeSchoolShoutoutLabel.adjustsFontSizeToFitWidth = true
+        makeSchoolShoutoutLabel.lineBreakMode = .byTruncatingTail
+        
+        customMakeSchoolFooter.addSubview(makeSchoolShoutoutLabel)
+        customMakeSchoolFooter.addSubview(versionLabel)
+        
+        return customMakeSchoolFooter
+    }
 
     // MARK: - Navigation
 
