@@ -30,12 +30,14 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
 //        makeSchoolLabelString.addAttribute(<#T##name: String##String#>, value: <#T##Any#>, range: <#T##NSRange#>)
 //        addAttribute(NSForegroundColorAttributeName, value: UIColor.red , range: range
-        makeSchoolLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor(red: 50.0/255.0, green: 177.0/255.0, blue: 225.0/255.0, alpha: 1.0), range: NSRange(location:0,length:5))
+        makeSchoolLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor(red: 50.0/255.0, green: 177.0/255.0, blue: 225.0/255.0, alpha: 1.0), range: NSRange(location:15,length:11))
         
-        makeSchoolLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor(red: 249.0/255.0, green: 124.0/255.0, blue: 84.0/255.0, alpha: 1.0), range: NSRange(location:5,length:5))
+        makeSchoolLabelString.addAttribute(NSForegroundColorAttributeName, value: UIColor(red: 249.0/255.0, green: 124.0/255.0, blue: 84.0/255.0, alpha: 1.0), range: NSRange(location:10,length:1))
         
         makeSchoolShoutoutLabel.attributedText = makeSchoolLabelString
         makeSchoolShoutoutLabel.minimumScaleFactor = 0.5
+        makeSchoolShoutoutLabel.adjustsFontSizeToFitWidth = true
+        makeSchoolShoutoutLabel.lineBreakMode = .byTruncatingTail
         
         customMakeSchoolFooter.addSubview(makeSchoolShoutoutLabel)
         customMakeSchoolFooter.addSubview(versionLabel)
@@ -49,7 +51,7 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
         
 //        labName.attributedText = myMutableString
         
-        customMakeSchoolFooter.backgroundColor = .orange
+//        customMakeSchoolFooter.backgroundColor = .orange
         self.tableView.tableFooterView = customMakeSchoolFooter
     }
     
