@@ -17,6 +17,7 @@
 		FA18C48F1E21F03E0053AEC5 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */; };
 		FA18C4911E21F5660053AEC5 /* ClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */; };
 		FA18C4941E21F7050053AEC5 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C4931E21F7050053AEC5 /* Class.swift */; };
+		FA2798C71E25EA4C004102C4 /* ExtraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2798C61E25EA4C004102C4 /* ExtraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA18C4931E21F7050053AEC5 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		FA2798C61E25EA4C004102C4 /* ExtraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				FA18C48C1E21EFDB0053AEC5 /* ProfileViewController.swift */,
+				FA2798C61E25EA4C004102C4 /* ExtraController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				FA18C4911E21F5660053AEC5 /* ClassCollectionViewCell.swift in Sources */,
 				FA0811B01E1F3ABA00C9D314 /* AppDelegate.swift in Sources */,
 				FA18C4941E21F7050053AEC5 /* Class.swift in Sources */,
+				FA2798C71E25EA4C004102C4 /* ExtraController.swift in Sources */,
 				FA18C48F1E21F03E0053AEC5 /* ProfileCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
