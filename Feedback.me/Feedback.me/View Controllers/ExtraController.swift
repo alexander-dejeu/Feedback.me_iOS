@@ -11,14 +11,14 @@ import UIKit
 class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //MARK: - IBOutlets
-    @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var settingsTableView : UITableView!
     
     
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.tableFooterView = createMakeSchoolFooterView()
+        self.settingsTableView.tableFooterView = createMakeSchoolFooterView()
     }
     
     
@@ -28,6 +28,8 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
+        cell.accessoryType = .disclosureIndicator
         return UITableViewCell()
     }
     
@@ -46,7 +48,6 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         versionLabel.textAlignment = .center
         versionLabel.attributedText = versionlLabelString
-        
         makeSchoolShoutoutLabel.textAlignment = .center
         makeSchoolShoutoutLabel.attributedText = makeSchoolLabelString
         makeSchoolShoutoutLabel.minimumScaleFactor = 0.5
