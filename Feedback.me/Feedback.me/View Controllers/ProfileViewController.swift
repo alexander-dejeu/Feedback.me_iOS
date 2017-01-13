@@ -27,7 +27,20 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        if self.items.count % 2 == 0 {
+            return self.items.count
+        }
+        if section == 0 {
+            return self.items.count - 1
+        }
+        return 1
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if self.items.count % 2 == 1 {
+            return 2
+        }
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -36,20 +49,15 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         return CGSize(width: cellWidth, height: cellHeight);
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-//        let cellCount = items.count
-//        let cellWidth = (self.view.frame.width / 2) - 12
-//        
-//        
-//
-////        let totalCellWidth = cellWidth * cellCount
-////        let totalSpacingWidth = CellSpacing * (cellCount - 1)
-////        
-////        let leftInset = (collectionViewWidth - CGFloat(totalCellWidth + totalSpacingWidth)) / 2;
-////        let rightInset = leftInset
-//        
-//        return UIEdgeInsetsMake(0, 12, 0, 12)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    
+        if section == 0 {
+             return UIEdgeInsetsMake(8, 8, 8, 8)
+        }
+        else{
+             return UIEdgeInsetsMake(8, 12, 8, 12)
+        }
+    }
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
