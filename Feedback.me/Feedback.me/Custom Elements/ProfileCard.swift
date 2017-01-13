@@ -26,5 +26,10 @@ class ProfileCard: UIView {
         self.editButton.addTarget(self, action: #selector(filp), for: .touchUpInside)
     }
     
+    func style(){
+        self.layer.borderColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0).cgColor
+        self.layer.borderWidth = 1
+    }
+    
 
 }

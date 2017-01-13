@@ -18,6 +18,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userProfile.setupEdit()
+        self.userProfile.style()
+        classesCollectionView.backgroundColor = globalColors.background
     }
     
     
@@ -60,6 +62,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
 //        cell.myLabel.text = self.items[indexPath.item]
 //        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
         cell.styleCell()
+        cell.fitLabels()
         return cell
     }
     

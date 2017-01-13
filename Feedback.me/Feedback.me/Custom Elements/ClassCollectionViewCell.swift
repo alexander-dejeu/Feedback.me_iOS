@@ -15,5 +15,17 @@ class ClassCollectionViewCell: UICollectionViewCell {
     func styleCell(){
         self.layer.borderColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0).cgColor
         self.layer.borderWidth = 1
+        self.backgroundColor = .white
+    }
+    
+    func fitLabels(){
+        classTitleLabel.adjustsFontSizeToFitWidth = true
+        classInstructorLabel.adjustsFontSizeToFitWidth = true
+        
+        classTitleLabel.minimumScaleFactor = 0.5
+        classInstructorLabel.minimumScaleFactor = 0.5
+        
+        classTitleLabel.lineBreakMode = .byClipping
+        classInstructorLabel.lineBreakMode = .byClipping
     }
 }

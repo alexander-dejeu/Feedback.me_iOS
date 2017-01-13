@@ -138,14 +138,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="163" height="85"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculus IV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnG-j8-E3h">
-                                                            <rect key="frame" x="21.5" y="8" width="120" height="29"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculus IV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnG-j8-E3h">
+                                                            <rect key="frame" x="8" y="8" width="147" height="29"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mrs. Steingold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqV-gj-gcI">
-                                                            <rect key="frame" x="29" y="41" width="105" height="19.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mrs. Steingold" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqV-gj-gcI">
+                                                            <rect key="frame" x="8" y="41" width="147" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -153,10 +153,12 @@
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="fqV-gj-gcI" firstAttribute="centerX" secondItem="fnG-j8-E3h" secondAttribute="centerX" id="Ald-KQ-Doy"/>
                                                     <constraint firstItem="fnG-j8-E3h" firstAttribute="top" secondItem="Gmr-1K-Yaz" secondAttribute="top" constant="8" id="CdN-gU-KKo"/>
+                                                    <constraint firstItem="fnG-j8-E3h" firstAttribute="leading" secondItem="Gmr-1K-Yaz" secondAttribute="leading" constant="8" id="LWI-vV-nOg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fqV-gj-gcI" secondAttribute="trailing" constant="8" id="aQL-ao-eeG"/>
+                                                    <constraint firstItem="fqV-gj-gcI" firstAttribute="leading" secondItem="Gmr-1K-Yaz" secondAttribute="leading" constant="8" id="kur-u1-wrB"/>
                                                     <constraint firstItem="fqV-gj-gcI" firstAttribute="top" secondItem="fnG-j8-E3h" secondAttribute="bottom" constant="4" id="q8p-TI-YYh"/>
-                                                    <constraint firstItem="fnG-j8-E3h" firstAttribute="centerX" secondItem="Gmr-1K-Yaz" secondAttribute="centerX" id="xvb-Gu-FpF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fnG-j8-E3h" secondAttribute="trailing" constant="8" id="rVa-MD-HqP"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="classInstructorLabel" destination="fqV-gj-gcI" id="kab-id-VqG"/>
@@ -432,7 +434,7 @@
                                 <color key="tintColor" red="0.96078431372549022" green="0.40000000000000002" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBF-H8-BLQ">
-                                <rect key="frame" x="0.0" y="92" width="375" height="526"/>
+                                <rect key="frame" x="0.0" y="93" width="375" height="525"/>
                                 <connections>
                                     <segue destination="gvU-Im-MHc" kind="embed" id="EAS-sH-Rc4"/>
                                 </connections>
@@ -444,7 +446,7 @@
                             <constraint firstItem="iIU-QY-wAm" firstAttribute="top" secondItem="0bw-By-T62" secondAttribute="bottom" id="Gj4-bm-pOq"/>
                             <constraint firstAttribute="trailing" secondItem="iIU-QY-wAm" secondAttribute="trailing" id="Meb-BF-nkJ"/>
                             <constraint firstItem="KBF-H8-BLQ" firstAttribute="leading" secondItem="7aq-yR-fn7" secondAttribute="leading" id="ZD0-JW-vFy"/>
-                            <constraint firstItem="KBF-H8-BLQ" firstAttribute="top" secondItem="iIU-QY-wAm" secondAttribute="bottom" id="bwb-Fd-tV9"/>
+                            <constraint firstItem="KBF-H8-BLQ" firstAttribute="top" secondItem="iIU-QY-wAm" secondAttribute="bottom" constant="1" id="bwb-Fd-tV9"/>
                             <constraint firstAttribute="trailing" secondItem="KBF-H8-BLQ" secondAttribute="trailing" id="vWQ-Uk-dhe"/>
                             <constraint firstItem="7vN-lm-pWH" firstAttribute="top" secondItem="KBF-H8-BLQ" secondAttribute="bottom" id="ydg-IF-6xJ"/>
                         </constraints>
@@ -500,11 +502,11 @@
                         <viewControllerLayoutGuide type="bottom" id="FwK-Jp-njf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gKP-8d-BSs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="526"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="525"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6yj-Du-ZJC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="526"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="Zd7-PO-iRe">
