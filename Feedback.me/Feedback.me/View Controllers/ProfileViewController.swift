@@ -15,6 +15,12 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     var items: [Class] = [Class(title: "Calculus IV", instructor: "Mrs. Steingold"), Class(title: "European History", instructor: "Mr. Jewells"), Class(title: "French III", instructor: "Mme. Wildfong")]
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.userProfile.setupEdit()
+    }
+    
+    
     // MARK: - UICollectionViewDataSource protocol
     
     // tell the collection view how many cells to make
@@ -63,26 +69,11 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.userProfile.setupEdit()
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

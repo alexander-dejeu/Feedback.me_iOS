@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rFl-NU-0vc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZF7-Oi-qYn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -198,11 +198,17 @@
                             <constraint firstItem="fvu-DT-5gP" firstAttribute="leading" secondItem="0DP-eZ-nDS" secondAttribute="leading" id="n7e-ix-lvq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VSu-2n-wrM" userLabel="Cant Remove"/>
+                    <navigationItem key="navigationItem" id="VSu-2n-wrM" userLabel="Cant Remove">
+                        <barButtonItem key="rightBarButtonItem" image="Dots" id="ujR-Ud-wI7">
+                            <color key="tintColor" red="0.96078431369999995" green="0.40000000000000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="rFl-NU-0vc" kind="show" id="Wns-09-tf0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="classesCollectionView" destination="JPc-Iv-G7v" id="UIY-9v-sKH"/>
                         <outlet property="userProfile" destination="ppK-pf-icF" id="EWx-I8-nkZ"/>
-                        <segue destination="rFl-NU-0vc" kind="show" id="bT7-GO-o6j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBF-Kn-FEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,7 +228,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4JC-W1-OIY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsCell" id="sWx-o3-9YD">
@@ -231,6 +237,18 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sWx-o3-9YD" id="QNk-lJ-nLQ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IN-1l-maK">
+                                                    <rect key="frame" x="16" y="12" width="75.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6IN-1l-maK" firstAttribute="leading" secondItem="QNk-lJ-nLQ" secondAttribute="leading" constant="16" id="Jcn-Pb-DTS"/>
+                                                <constraint firstItem="6IN-1l-maK" firstAttribute="top" secondItem="QNk-lJ-nLQ" secondAttribute="top" constant="12" id="K1R-1y-c3m"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0H7-Ui-p3C">
@@ -253,7 +271,7 @@
                         <constraints>
                             <constraint firstItem="4JC-W1-OIY" firstAttribute="top" secondItem="7Yb-8l-VRf" secondAttribute="top" id="HAE-g8-Pkc"/>
                             <constraint firstItem="4JC-W1-OIY" firstAttribute="leading" secondItem="7Yb-8l-VRf" secondAttribute="leading" id="Jx8-1T-GkP"/>
-                            <constraint firstItem="dhC-B9-ZLb" firstAttribute="top" secondItem="4JC-W1-OIY" secondAttribute="bottom" id="cdF-IZ-E6Z"/>
+                            <constraint firstAttribute="bottom" secondItem="4JC-W1-OIY" secondAttribute="bottom" id="Y2a-eL-VzK"/>
                             <constraint firstAttribute="trailing" secondItem="4JC-W1-OIY" secondAttribute="trailing" id="ckb-7u-d00"/>
                         </constraints>
                     </view>
@@ -263,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9v-8S-aNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092" y="1530"/>
+            <point key="canvasLocation" x="3088.8000000000002" y="1526.9865067466269"/>
         </scene>
         <!--Classrooms-->
         <scene sceneID="amd-vt-rJ2">
@@ -553,4 +571,7 @@
             <point key="canvasLocation" x="2880.8000000000002" y="-1135.2323838080961"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dots" width="29" height="7"/>
+    </resources>
 </document>
