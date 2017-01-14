@@ -16,4 +16,10 @@ class ClassCell: UITableViewCell {
     @IBOutlet weak var classTitle : UILabel!
     @IBOutlet weak var classGrade : UILabel!
 
+    
+    func styleCell(){
+        cellBackgroundView.backgroundColor = .white
+        cellBackgroundView.layer.borderColor = globalColors.boarders.cgColor
+        cellBackgroundView.layer.borderWidth = 1
+    }
 }

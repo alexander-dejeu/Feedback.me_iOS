@@ -13,4 +13,6 @@ struct globalColors {
     
     static var background = UIColor(red: 251.0/255.0, green: 251.0/255.0, blue: 251.0/255.0, alpha: 1.0)
     static var makeSchool = UIColor(red: 50.0/255.0, green: 177.0/255.0, blue: 225.0/255.0, alpha: 1.0)
+    
+    static var boarders = UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 1.0)
 }
