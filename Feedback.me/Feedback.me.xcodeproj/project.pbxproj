@@ -17,6 +17,8 @@
 		FA18C48F1E21F03E0053AEC5 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */; };
 		FA18C4911E21F5660053AEC5 /* ClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */; };
 		FA18C4941E21F7050053AEC5 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C4931E21F7050053AEC5 /* Class.swift */; };
+		FA2323A91E29EE40001594BE /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2323A81E29EE40001594BE /* ClassCell.swift */; };
+		FA2323AB1E29EFA0001594BE /* ClassesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2323AA1E29EFA0001594BE /* ClassesController.swift */; };
 		FA2798C71E25EA4C004102C4 /* ExtraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2798C61E25EA4C004102C4 /* ExtraController.swift */; };
 		FA789BFB1E283E190077954B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA789BFA1E283E190077954B /* Colors.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 		FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA18C4931E21F7050053AEC5 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		FA2323A81E29EE40001594BE /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
+		FA2323AA1E29EFA0001594BE /* ClassesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesController.swift; sourceTree = "<group>"; };
 		FA2798C61E25EA4C004102C4 /* ExtraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraController.swift; sourceTree = "<group>"; };
 		FA789BFA1E283E190077954B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +147,7 @@
 			children = (
 				FA18C48C1E21EFDB0053AEC5 /* ProfileViewController.swift */,
 				FA2798C61E25EA4C004102C4 /* ExtraController.swift */,
+				FA2323AA1E29EFA0001594BE /* ClassesController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			children = (
 				FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */,
 				FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */,
+				FA2323A81E29EE40001594BE /* ClassCell.swift */,
 			);
 			path = "Custom Elements";
 			sourceTree = "<group>";
@@ -309,9 +315,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2323A91E29EE40001594BE /* ClassCell.swift in Sources */,
 				FA18C48D1E21EFDB0053AEC5 /* ProfileViewController.swift in Sources */,
 				FA18C4911E21F5660053AEC5 /* ClassCollectionViewCell.swift in Sources */,
 				FA0811B01E1F3ABA00C9D314 /* AppDelegate.swift in Sources */,
+				FA2323AB1E29EFA0001594BE /* ClassesController.swift in Sources */,
 				FA789BFB1E283E190077954B /* Colors.swift in Sources */,
 				FA18C4941E21F7050053AEC5 /* Class.swift in Sources */,
 				FA2798C71E25EA4C004102C4 /* ExtraController.swift in Sources */,

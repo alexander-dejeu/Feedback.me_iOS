@@ -302,10 +302,10 @@
             </objects>
             <point key="canvasLocation" x="1249" y="768"/>
         </scene>
-        <!--View Controller-->
+        <!--Classes Controller-->
         <scene sceneID="MgE-IU-wqS">
             <objects>
-                <viewController id="9Zi-Mj-Dqe" sceneMemberID="viewController">
+                <viewController id="9Zi-Mj-Dqe" customClass="ClassesController" customModule="Feedback_me" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bnc-ip-XAu"/>
                         <viewControllerLayoutGuide type="bottom" id="xaQ-pT-F4K"/>
@@ -318,7 +318,7 @@
                                 <rect key="frame" x="0.0" y="16" width="375" height="602"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="140" id="hqd-18-B8R">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="classCell" rowHeight="140" id="hqd-18-B8R" customClass="ClassCell" customModule="Feedback_me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hqd-18-B8R" id="d7a-W1-ipk">
@@ -347,7 +347,7 @@
                                                             <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qlG-4r-iyU">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Disclosure Indicator" translatesAutoresizingMaskIntoConstraints="NO" id="qlG-4r-iyU">
                                                             <rect key="frame" x="341" y="98.5" width="10" height="17"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="17" id="4f4-HP-Xkw"/>
@@ -377,8 +377,18 @@
                                                 <constraint firstItem="La9-sO-ELb" firstAttribute="top" secondItem="d7a-W1-ipk" secondAttribute="top" constant="8" id="qyW-eW-ZLY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellBackgroundView" destination="La9-sO-ELb" id="N9s-wX-Xrn"/>
+                                            <outlet property="cellColorHighlight" destination="0iy-Hg-o0s" id="EOL-ZS-G2M"/>
+                                            <outlet property="classGrade" destination="9Lj-FB-ZOz" id="sDl-oq-rrh"/>
+                                            <outlet property="classTitle" destination="NXn-3W-J7S" id="2ec-d7-7l4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9Zi-Mj-Dqe" id="jmr-vc-Oba"/>
+                                    <outlet property="delegate" destination="9Zi-Mj-Dqe" id="jtv-H9-sNw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -574,6 +584,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Disclosure Indicator" width="30" height="51"/>
         <image name="Dots" width="29" height="7"/>
     </resources>
 </document>
