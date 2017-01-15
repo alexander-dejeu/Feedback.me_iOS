@@ -9,5 +9,12 @@
 import UIKit
 
 class FeedbackCell: UITableViewCell {
-
+    //MARK : - IBOutlets
+    @IBOutlet weak var backgroundContainerView : UIView!
+    @IBOutlet weak var userProfileImage : UIImageView!
+    @IBOutlet weak var ratingView : StarRatingView!
+    @IBOutlet weak var fromClassLabel : UILabel!
+    @IBOutlet weak var feedbackLabel : UILabel!
+    @
+    IBOutlet weak var postedAgo : UILabel!
 }
