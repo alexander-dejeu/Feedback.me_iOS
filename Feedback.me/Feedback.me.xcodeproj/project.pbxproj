@@ -17,6 +17,7 @@
 		FA18C48F1E21F03E0053AEC5 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */; };
 		FA18C4911E21F5660053AEC5 /* ClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */; };
 		FA18C4941E21F7050053AEC5 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C4931E21F7050053AEC5 /* Class.swift */; };
+		FA2281761E2B4C3D007B1AFE /* EditProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2281751E2B4C3D007B1AFE /* EditProfileCard.swift */; };
 		FA2323A91E29EE40001594BE /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2323A81E29EE40001594BE /* ClassCell.swift */; };
 		FA2323AB1E29EFA0001594BE /* ClassesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2323AA1E29EFA0001594BE /* ClassesController.swift */; };
 		FA2323AD1E29F9D0001594BE /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2323AC1E29F9D0001594BE /* StarRatingView.swift */; };
@@ -59,6 +60,7 @@
 		FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA18C4931E21F7050053AEC5 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		FA2281751E2B4C3D007B1AFE /* EditProfileCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileCard.swift; sourceTree = "<group>"; };
 		FA2323A81E29EE40001594BE /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
 		FA2323AA1E29EFA0001594BE /* ClassesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesController.swift; sourceTree = "<group>"; };
 		FA2323AC1E29F9D0001594BE /* StarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */,
 				FA2323A81E29EE40001594BE /* ClassCell.swift */,
 				FA2323AC1E29F9D0001594BE /* StarRatingView.swift */,
+				FA2281751E2B4C3D007B1AFE /* EditProfileCard.swift */,
 			);
 			path = "Custom Elements";
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				FA18C4911E21F5660053AEC5 /* ClassCollectionViewCell.swift in Sources */,
 				FA2323AD1E29F9D0001594BE /* StarRatingView.swift in Sources */,
 				FA0811B01E1F3ABA00C9D314 /* AppDelegate.swift in Sources */,
+				FA2281761E2B4C3D007B1AFE /* EditProfileCard.swift in Sources */,
 				FA2323AB1E29EFA0001594BE /* ClassesController.swift in Sources */,
 				FA789BFB1E283E190077954B /* Colors.swift in Sources */,
 				FA2323AF1E29FB3A001594BE /* DashboardController.swift in Sources */,

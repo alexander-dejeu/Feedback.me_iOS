@@ -11,6 +11,7 @@ import UIKit
 class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var userProfile: ProfileCard!
+    @IBOutlet weak var editProfile: EditProfileCard!
     @IBOutlet weak var classesCollectionView: UICollectionView!
     
     var items: [Class] = [Class(title: "Calculus IV", instructor: "Mrs. Steingold"), Class(title: "European History", instructor: "Mr. Jewells"), Class(title: "French III", instructor: "Mme. Wildfong")]
@@ -19,7 +20,32 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         super.viewDidLoad()
         self.userProfile.setupEdit()
         self.userProfile.style()
+        self.editProfile.setupSave()
+        self.editProfile.style()
+        self.editProfile.closurerToHide = hideEditProfile
+        self.userProfile.closurerToHide = hideUserProfile
+        self.editProfile.isHidden = true
         classesCollectionView.backgroundColor = globalColors.background
+    }
+    
+    func hideUserProfile(){
+        print("hide user profie")
+        self.editProfile.isHidden = false
+        self.userProfile.isHidden = true
+        let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        
+        UIView.transition(with: editProfile, duration: 1.0, options: transitionOptions, animations: {
+        })
+
+    }
+    func hideEditProfile(){
+        print("hide edit profie")
+        self.editProfile.isHidden = true
+        self.userProfile.isHidden = false
+        let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        
+        UIView.transition(with: userProfile, duration: 1.0, options: transitionOptions, animations: {
+        })
     }
     
     

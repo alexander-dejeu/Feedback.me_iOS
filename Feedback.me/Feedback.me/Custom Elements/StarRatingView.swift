@@ -20,7 +20,7 @@ class StarRatingView: UIView {
         starSpacing = (self.frame.width - (starWidth * 5)) / 4.0
         
         for i in 0..<rating{
-            let star = UIImage(named: "filledStar")
+            let star = UIImage(named: "FilledOrangeStar")
             let starFrame = CGRect(x: CGFloat(i) * (starWidth + starSpacing), y: 0, width: starWidth, height: starHeight)
             let starView = UIImageView(frame: starFrame)
             starView.image = star

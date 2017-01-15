@@ -17,6 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.96078431369999995" green="0.40000000000000002" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="AAd-3B-UbT" kind="relationship" relationship="viewControllers" id="Xo8-5o-R8v"/>
@@ -33,7 +34,7 @@
         <scene sceneID="8gg-Jz-XQ1">
             <objects>
                 <navigationController id="5Xa-HH-vJn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="mS1-XU-ZG0"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="mS1-XU-ZG0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rPz-37-eoH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -61,6 +62,23 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvu-DT-5gP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9U-9p-9kh" customClass="EditProfileCard" customModule="Feedback_me" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="360" height="264"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tty-bn-qTL">
+                                                <rect key="frame" x="163" y="226" width="34" height="30"/>
+                                                <state key="normal" title="Save"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="tty-bn-qTL" secondAttribute="bottom" constant="8" id="RUE-9N-Kp8"/>
+                                            <constraint firstItem="tty-bn-qTL" firstAttribute="centerX" secondItem="l9U-9p-9kh" secondAttribute="centerX" id="hRh-Ob-xQm"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="saveButton" destination="tty-bn-qTL" id="lgG-vY-uwd"/>
+                                        </connections>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppK-pf-icF" customClass="ProfileCard" customModule="Feedback_me" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="360" height="264"/>
                                         <subviews>
@@ -72,26 +90,26 @@
                                                 <state key="normal" title="Edit"/>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IfH-my-NWn">
-                                                <rect key="frame" x="117.5" y="16" width="125" height="125"/>
+                                                <rect key="frame" x="118" y="16" width="125" height="125"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="125" id="aZ5-xO-kFr"/>
                                                     <constraint firstAttribute="width" constant="125" id="mwS-YI-2iA"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="James Fuller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egX-mb-QgH">
-                                                <rect key="frame" x="102" y="149" width="156.5" height="33.5"/>
+                                                <rect key="frame" x="102" y="149" width="157" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abraham Lincoln High" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bir-MB-eXh">
-                                                <rect key="frame" x="90" y="190" width="179" height="22"/>
+                                                <rect key="frame" x="91" y="191" width="179" height="22"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="James.Fuller@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgW-hc-P08">
-                                                <rect key="frame" x="99" y="216" width="161" height="17"/>
+                                                <rect key="frame" x="100" y="217" width="161" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -172,7 +190,7 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Classes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXk-EX-JWi">
-                                        <rect key="frame" x="126.5" y="296" width="123" height="29"/>
+                                        <rect key="frame" x="127" y="296" width="123" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -185,8 +203,12 @@
                                     <constraint firstItem="gXk-EX-JWi" firstAttribute="top" secondItem="ppK-pf-icF" secondAttribute="bottom" constant="24" id="FQ0-1N-Dm0"/>
                                     <constraint firstItem="ppK-pf-icF" firstAttribute="leading" secondItem="fvu-DT-5gP" secondAttribute="leading" constant="8" id="FSM-sS-wH6"/>
                                     <constraint firstItem="gXk-EX-JWi" firstAttribute="centerX" secondItem="ppK-pf-icF" secondAttribute="centerX" id="T3b-8X-IAp"/>
+                                    <constraint firstItem="l9U-9p-9kh" firstAttribute="centerY" secondItem="ppK-pf-icF" secondAttribute="centerY" id="ae0-Xm-wZj"/>
                                     <constraint firstItem="JPc-Iv-G7v" firstAttribute="top" secondItem="gXk-EX-JWi" secondAttribute="bottom" constant="26" id="b6X-wc-YK9"/>
+                                    <constraint firstItem="l9U-9p-9kh" firstAttribute="width" secondItem="ppK-pf-icF" secondAttribute="width" id="d1G-Kx-4SE"/>
                                     <constraint firstItem="JPc-Iv-G7v" firstAttribute="leading" secondItem="fvu-DT-5gP" secondAttribute="leading" id="etz-lY-QQP"/>
+                                    <constraint firstItem="l9U-9p-9kh" firstAttribute="height" secondItem="ppK-pf-icF" secondAttribute="height" id="f0V-5q-2Zr"/>
+                                    <constraint firstItem="l9U-9p-9kh" firstAttribute="centerX" secondItem="ppK-pf-icF" secondAttribute="centerX" id="nxD-ab-oSq"/>
                                     <constraint firstAttribute="trailing" secondItem="JPc-Iv-G7v" secondAttribute="trailing" id="wnv-PI-tci"/>
                                     <constraint firstAttribute="bottom" secondItem="JPc-Iv-G7v" secondAttribute="bottom" constant="64" id="yL6-TY-iTl"/>
                                 </constraints>
@@ -210,6 +232,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="classesCollectionView" destination="JPc-Iv-G7v" id="UIY-9v-sKH"/>
+                        <outlet property="editProfile" destination="l9U-9p-9kh" id="WUG-bo-mWn"/>
                         <outlet property="userProfile" destination="ppK-pf-icF" id="EWx-I8-nkZ"/>
                     </connections>
                 </viewController>
@@ -289,7 +312,7 @@
         <scene sceneID="amd-vt-rJ2">
             <objects>
                 <navigationController id="sYq-30-DPS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Classrooms" id="aAg-kd-qtq"/>
+                    <tabBarItem key="tabBarItem" title="Classrooms" image="Classes" id="aAg-kd-qtq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6bR-wu-rkI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -409,7 +432,7 @@
         <scene sceneID="WIQ-e6-cPT">
             <objects>
                 <navigationController id="kcT-yG-Riw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Forms" id="zgn-yG-tl6"/>
+                    <tabBarItem key="tabBarItem" title="Forms" image="Forms" id="zgn-yG-tl6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DVl-z2-Sym">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -508,7 +531,7 @@
         <scene sceneID="fUa-cC-HWu">
             <objects>
                 <navigationController id="AAd-3B-UbT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="NrT-0z-Ne7"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="Dashboard" id="NrT-0z-Ne7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UPu-Mu-3HW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -595,7 +618,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="1jf-Nr-IlP" secondAttribute="bottom" constant="8" id="0VV-23-6wv"/>
                                                 <constraint firstItem="1jf-Nr-IlP" firstAttribute="top" secondItem="Kaw-Qn-ZWg" secondAttribute="top" constant="8" id="bCv-ba-xdO"/>
-                                                <constraint firstItem="1jf-Nr-IlP" firstAttribute="centerY" secondItem="Kaw-Qn-ZWg" secondAttribute="centerY" id="df0-cD-qIF"/>
                                                 <constraint firstAttribute="trailing" secondItem="1jf-Nr-IlP" secondAttribute="trailing" constant="8" id="v2J-bC-oDU"/>
                                                 <constraint firstItem="1jf-Nr-IlP" firstAttribute="leading" secondItem="Kaw-Qn-ZWg" secondAttribute="leading" constant="8" id="zTv-jP-cmN"/>
                                             </constraints>
@@ -624,7 +646,7 @@
                                                             <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AeY-Zc-mTr">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OrangeAnnouncement" translatesAutoresizingMaskIntoConstraints="NO" id="AeY-Zc-mTr">
                                                             <rect key="frame" x="66" y="45" width="20" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="jbU-1b-eCZ"/>
@@ -639,7 +661,7 @@
                                                                 <constraint firstAttribute="width" constant="93" id="dOk-4P-RGa"/>
                                                             </constraints>
                                                         </view>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="saV-KH-uD5">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PersonOutline" translatesAutoresizingMaskIntoConstraints="NO" id="saV-KH-uD5">
                                                             <rect key="frame" x="197" y="45" width="13" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="13" id="JaP-6r-9FQ"/>
@@ -664,7 +686,7 @@
                                                             <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VLS-6d-epZ">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockOutline" translatesAutoresizingMaskIntoConstraints="NO" id="VLS-6d-epZ">
                                                             <rect key="frame" x="247" y="188" width="12" height="12"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="12" id="Mic-09-z0m"/>
@@ -677,7 +699,6 @@
                                                         <constraint firstAttribute="bottom" secondItem="VLS-6d-epZ" secondAttribute="bottom" constant="9" id="12g-E0-OOF"/>
                                                         <constraint firstItem="7vn-46-63t" firstAttribute="top" secondItem="Qm9-8W-mWP" secondAttribute="top" constant="16" id="7zv-UT-ytj"/>
                                                         <constraint firstItem="saV-KH-uD5" firstAttribute="leading" secondItem="AIn-Cw-8XC" secondAttribute="trailing" constant="15" id="CaF-hn-hAb"/>
-                                                        <constraint firstAttribute="height" constant="209" id="Cm6-MD-6r8"/>
                                                         <constraint firstAttribute="bottom" secondItem="tQ3-aK-ZfS" secondAttribute="bottom" constant="8" id="D2B-AY-Wmo"/>
                                                         <constraint firstItem="Zer-yo-14S" firstAttribute="top" secondItem="7vn-46-63t" secondAttribute="top" constant="-1" id="E1w-xu-CGs"/>
                                                         <constraint firstItem="AIn-Cw-8XC" firstAttribute="top" secondItem="Zer-yo-14S" secondAttribute="bottom" constant="8" id="HPI-Er-z65"/>
@@ -771,7 +792,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Classes" width="24" height="30"/>
+        <image name="ClockOutline" width="42" height="42"/>
+        <image name="Dashboard" width="29" height="28"/>
         <image name="Disclosure Indicator" width="30" height="51"/>
         <image name="Dots" width="29" height="7"/>
+        <image name="Forms" width="29" height="29"/>
+        <image name="OrangeAnnouncement" width="66" height="51"/>
+        <image name="PersonOutline" width="39" height="51"/>
+        <image name="Profile" width="28" height="30"/>
     </resources>
 </document>
