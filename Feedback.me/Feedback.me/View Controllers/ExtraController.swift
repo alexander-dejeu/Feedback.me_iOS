@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import MessageUI
 
-class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
 
     //MARK: - IBOutlets
     @IBOutlet weak var settingsTableView : UITableView!
     
+    
+    //MARK: - Properties
+    var tableviewData : [[String]] = [["Feedback", "Share", "Rate Us"], ["Logout"]]
     
     //MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -66,6 +70,25 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
         return view
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("A cell was tapped")
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                feedback()
+            case 1:
+                share()
+            case 2:
+                rateUs()
+            default:
+                print(#function, "issue hit default")
+            }
+        }
+        else if indexPath.section == 1 {
+            logout()
+        }
+    }
+    
     
     //MARK: - Helpers
     func createMakeSchoolFooterView() -> UIView {
@@ -95,6 +118,59 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
         customMakeSchoolFooter.addSubview(lineTop)
         
         return customMakeSchoolFooter
+    }
+    
+    //MARK: Tableview Functions
+    // MARK Email feedback
+    func feedback(){
+        let mailComposeViewController = configuredMailComposeViewController()
+        mailComposeViewController.navigationBar.tintColor = UIColor.white
+        
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: {
+                UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: true)})
+        }
+        else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        
+        mailComposerVC.setToRecipients(["hello@DoGoodTechnology.com"])
+        mailComposerVC.setSubject("Feedback.me - Feedback")
+        mailComposerVC.setMessageBody("What do think about Feedback.me? \u{1F60C}", isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    
+    
+    // MARK: MFMailComposeViewControllerDelegate
+    func mailComposeController(_ controller: MFMailComposeViewController!, didFinishWith result: MFMailComposeResult, error: Error!) {
+        controller.dismiss(animated: true, completion: nil)
+        
+    }
+
+    
+    
+    
+    func share(){
+        
+    }
+    
+    func rateUs(){
+        
+    }
+    
+    func logout(){
+        
     }
 
     // MARK: - Navigation

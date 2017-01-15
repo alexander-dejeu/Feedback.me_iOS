@@ -18,7 +18,7 @@ class ProfileCard: UIView {
     var closurerToHide : (()->())? = nil
     
     
-    func filp(){
+    func flip(){
         let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
         
         UIView.transition(with: self, duration: 1.0, options: transitionOptions, animations: {
@@ -27,7 +27,7 @@ class ProfileCard: UIView {
     }
     
     func setupEdit(){
-        self.editButton.addTarget(self, action: #selector(filp), for: .touchUpInside)
+        self.editButton.addTarget(self, action: #selector(flip), for: .touchUpInside)
     }
     
     func style(){
