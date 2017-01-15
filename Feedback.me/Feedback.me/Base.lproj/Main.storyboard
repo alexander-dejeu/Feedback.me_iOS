@@ -472,6 +472,26 @@
                                     <action selector="indexChanged:" destination="f1D-Us-boe" eventType="valueChanged" id="RYI-Wd-C5p"/>
                                 </connections>
                             </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aDh-CZ-cYd">
+                                <rect key="frame" x="0.0" y="93" width="375" height="525"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wjx-S5-F0H">
+                                    <size key="itemSize" width="173" height="245"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="brv-qX-e29">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="245"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="173" height="245"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nMf-tK-amY">
                                 <rect key="frame" x="0.0" y="93" width="375" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -518,7 +538,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="i1T-Nd-ZmV" firstAttribute="centerY" secondItem="USm-HN-I8a" secondAttribute="centerY" id="DMV-oD-8hU"/>
                                                         <constraint firstItem="t60-x0-40X" firstAttribute="leading" secondItem="USm-HN-I8a" secondAttribute="leading" id="J1f-nJ-hlW"/>
@@ -538,8 +558,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="backgrondContainerView" destination="USm-HN-I8a" id="qfU-Eh-nrC"/>
                                             <outlet property="backgroundAccentView" destination="t60-x0-40X" id="3l2-L9-Zl0"/>
+                                            <outlet property="backgroundContainerView" destination="USm-HN-I8a" id="6Eh-Eb-LlE"/>
                                             <outlet property="classChangeBackground" destination="4Yw-6L-GWp" id="th8-rB-EiR"/>
                                             <outlet property="classChangeLabel" destination="7Nb-tQ-RQt" id="0cX-Ck-Tqv"/>
                                             <outlet property="classTickerLabel" destination="i1T-Nd-ZmV" id="T1F-Yy-poM"/>
@@ -616,7 +636,7 @@
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="uyA-sx-hkj" firstAttribute="leading" secondItem="TuF-IB-ThT" secondAttribute="trailing" constant="4" id="0qQ-Pq-iWg"/>
                                                         <constraint firstItem="SG1-ok-tMn" firstAttribute="leading" secondItem="A9M-qg-UnG" secondAttribute="trailing" constant="8" id="4Oz-la-aGU"/>
@@ -663,26 +683,6 @@
                                     <outlet property="dataSource" destination="f1D-Us-boe" id="H1g-UD-V3K"/>
                                 </connections>
                             </tableView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aDh-CZ-cYd">
-                                <rect key="frame" x="0.0" y="93" width="375" height="525"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wjx-S5-F0H">
-                                    <size key="itemSize" width="173" height="245"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="brv-qX-e29">
-                                        <rect key="frame" x="0.0" y="0.0" width="173" height="245"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="173" height="245"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>

@@ -15,6 +15,10 @@ class FeedbackCell: UITableViewCell {
     @IBOutlet weak var ratingView : StarRatingView!
     @IBOutlet weak var fromClassLabel : UILabel!
     @IBOutlet weak var feedbackLabel : UILabel!
-    @
-    IBOutlet weak var postedAgo : UILabel!
+    @IBOutlet weak var postedAgo : UILabel!
+    
+    func styleCell(){
+        backgroundContainerView.layer.borderColor = globalColors.boarders.cgColor
+        backgroundContainerView.layer.borderWidth = 1
+    }
 }

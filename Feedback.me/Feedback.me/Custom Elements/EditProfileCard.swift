@@ -27,7 +27,7 @@ class EditProfileCard: UIView {
     }
     
     func style(){
-        self.layer.borderColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0).cgColor
+        self.layer.borderColor = globalColors.boarders.cgColor
         self.layer.borderWidth = 1
     }
 

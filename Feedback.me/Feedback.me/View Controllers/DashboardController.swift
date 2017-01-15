@@ -38,6 +38,8 @@ class DashboardController: UIViewController {
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        dashboardTableView.separatorStyle = .none
+        dashboardTableView.tableFooterView = UIView()
     }
 
     
@@ -47,20 +49,55 @@ class DashboardController: UIViewController {
 
 extension DashboardController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        switch segmentedController.selectedSegmentIndex {
+        case 1:
+            return 8
+        case 2:
+            return 5
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch segmentedController.selectedSegmentIndex {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "classStockCell") as! ClassStockCell
+            cell.styleCell()
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "feedbackCell") as! FeedbackCell
+            cell.styleCell()
             return cell
         default:
             print(#function, "Did not find proper Cells")
             return UITableViewCell()
+        }
+    }
+}
+
+extension DashboardController  : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch segmentedController.selectedSegmentIndex {
+        case 1:
+            return 98
+        case 2:
+            return 233
+        default:
+            print(#function, "Did not find proper Cells")
+            return 75
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch segmentedController.selectedSegmentIndex {
+        case 1:
+            return 8
+        case 2:
+            return 12
+        default:
+            print(#function, "Did not find proper Cells")
+            return 75
         }
     }
 }
