@@ -256,7 +256,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsCell" id="sWx-o3-9YD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsCell" id="sWx-o3-9YD" customClass="SettingsCell" customModule="Feedback_me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sWx-o3-9YD" id="QNk-lJ-nLQ">
@@ -275,6 +275,9 @@
                                                 <constraint firstItem="6IN-1l-maK" firstAttribute="top" secondItem="QNk-lJ-nLQ" secondAttribute="top" constant="12" id="K1R-1y-c3m"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="settingLabel" destination="6IN-1l-maK" id="Hwt-ud-GCN"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0H7-Ui-p3C">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
@@ -560,7 +563,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="Zd7-PO-iRe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="Zd7-PO-iRe" customClass="ClassStockCell" customModule="Feedback_me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zd7-PO-iRe" id="Kaw-Qn-ZWg">
@@ -622,8 +625,12 @@
                                                 <constraint firstItem="1jf-Nr-IlP" firstAttribute="leading" secondItem="Kaw-Qn-ZWg" secondAttribute="leading" constant="8" id="zTv-jP-cmN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backgrondContainerView" destination="1jf-Nr-IlP" id="qmn-IR-lVs"/>
+                                            <outlet property="classTickerLabel" destination="fcI-3K-Y6R" id="eS4-vC-fwU"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="233" id="UdQ-lV-YWE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="233" id="UdQ-lV-YWE" customClass="FeedbackCell" customModule="Feedback_me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="116" width="375" height="233"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UdQ-lV-YWE" id="14a-vd-Eb1">

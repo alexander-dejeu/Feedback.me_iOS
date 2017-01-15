@@ -13,6 +13,9 @@
 		FA0811BA1E1F3ABA00C9D314 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0811B81E1F3ABA00C9D314 /* LaunchScreen.storyboard */; };
 		FA0811C51E1F3ABA00C9D314 /* Feedback_meTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0811C41E1F3ABA00C9D314 /* Feedback_meTests.swift */; };
 		FA0811D01E1F3ABA00C9D314 /* Feedback_meUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0811CF1E1F3ABA00C9D314 /* Feedback_meUITests.swift */; };
+		FA1681031E2B5719006FA815 /* ClassStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1681021E2B5719006FA815 /* ClassStockCell.swift */; };
+		FA1681051E2B573A006FA815 /* FeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1681041E2B573A006FA815 /* FeedbackCell.swift */; };
+		FA1681071E2B57BA006FA815 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1681061E2B57BA006FA815 /* SettingsCell.swift */; };
 		FA18C48D1E21EFDB0053AEC5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C48C1E21EFDB0053AEC5 /* ProfileViewController.swift */; };
 		FA18C48F1E21F03E0053AEC5 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */; };
 		FA18C4911E21F5660053AEC5 /* ClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */; };
@@ -56,6 +59,9 @@
 		FA0811CB1E1F3ABA00C9D314 /* Feedback.meUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Feedback.meUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0811CF1E1F3ABA00C9D314 /* Feedback_meUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback_meUITests.swift; sourceTree = "<group>"; };
 		FA0811D11E1F3ABA00C9D314 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA1681021E2B5719006FA815 /* ClassStockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassStockCell.swift; sourceTree = "<group>"; };
+		FA1681041E2B573A006FA815 /* FeedbackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackCell.swift; sourceTree = "<group>"; };
+		FA1681061E2B57BA006FA815 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		FA18C48C1E21EFDB0053AEC5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 				FA2323A81E29EE40001594BE /* ClassCell.swift */,
 				FA2323AC1E29F9D0001594BE /* StarRatingView.swift */,
 				FA2281751E2B4C3D007B1AFE /* EditProfileCard.swift */,
+				FA1681021E2B5719006FA815 /* ClassStockCell.swift */,
+				FA1681041E2B573A006FA815 /* FeedbackCell.swift */,
+				FA1681061E2B57BA006FA815 /* SettingsCell.swift */,
 			);
 			path = "Custom Elements";
 			sourceTree = "<group>";
@@ -324,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1681051E2B573A006FA815 /* FeedbackCell.swift in Sources */,
 				FA2323A91E29EE40001594BE /* ClassCell.swift in Sources */,
 				FA18C48D1E21EFDB0053AEC5 /* ProfileViewController.swift in Sources */,
 				FA18C4911E21F5660053AEC5 /* ClassCollectionViewCell.swift in Sources */,
@@ -334,8 +344,10 @@
 				FA789BFB1E283E190077954B /* Colors.swift in Sources */,
 				FA2323AF1E29FB3A001594BE /* DashboardController.swift in Sources */,
 				FA18C4941E21F7050053AEC5 /* Class.swift in Sources */,
+				FA1681031E2B5719006FA815 /* ClassStockCell.swift in Sources */,
 				FA2798C71E25EA4C004102C4 /* ExtraController.swift in Sources */,
 				FA18C48F1E21F03E0053AEC5 /* ProfileCard.swift in Sources */,
+				FA1681071E2B57BA006FA815 /* SettingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

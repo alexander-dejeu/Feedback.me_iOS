@@ -46,9 +46,10 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsCell
+        cell.settingLabel.text = tableviewData[indexPath.section][indexPath.row]
         cell.accessoryType = .disclosureIndicator
-        return UITableViewCell()
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
