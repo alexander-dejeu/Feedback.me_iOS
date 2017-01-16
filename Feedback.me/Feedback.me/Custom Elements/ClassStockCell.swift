@@ -18,7 +18,6 @@ class ClassStockCell: UITableViewCell {
     var closureUpdateAllTickers : (()->())? = nil
     
     func styleCell(){
-        print(backgroundContainerView)
         backgroundContainerView.layer.borderColor = globalColors.boarders.cgColor
         backgroundContainerView.layer.borderWidth = 1
         self.backgroundColor = globalColors.background
