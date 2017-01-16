@@ -15,9 +15,16 @@ class ClassStockCell: UITableViewCell {
     @IBOutlet weak var classChangeLabel : UILabel!
     @IBOutlet weak var backgroundAccentView: UIView!
     
+    var closureUpdateAllTickers : (()->())? = nil
+    
     func styleCell(){
         print(backgroundContainerView)
-        backgroundContainerView.layer.borderColor = UIColor.blue.cgColor
+        backgroundContainerView.layer.borderColor = globalColors.boarders.cgColor
         backgroundContainerView.layer.borderWidth = 1
+        self.backgroundColor = globalColors.background
+    }
+    
+    func setupTickerTapped(){
+        classChangeBackground.addTapGesture(tapNumber: 1, target: self, action: #selector(getter: closureUpdateAllTickers))
     }
 }

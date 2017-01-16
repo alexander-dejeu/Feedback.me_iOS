@@ -20,6 +20,7 @@
 		FA18C48F1E21F03E0053AEC5 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */; };
 		FA18C4911E21F5660053AEC5 /* ClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */; };
 		FA18C4941E21F7050053AEC5 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA18C4931E21F7050053AEC5 /* Class.swift */; };
+		FA1E0A0C1E2BD4A8008C9D13 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E0A0B1E2BD4A8008C9D13 /* Utilities.swift */; };
 		FA2281761E2B4C3D007B1AFE /* EditProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2281751E2B4C3D007B1AFE /* EditProfileCard.swift */; };
 		FA2323A91E29EE40001594BE /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2323A81E29EE40001594BE /* ClassCell.swift */; };
 		FA2323AB1E29EFA0001594BE /* ClassesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2323AA1E29EFA0001594BE /* ClassesController.swift */; };
@@ -27,6 +28,9 @@
 		FA2323AF1E29FB3A001594BE /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2323AE1E29FB3A001594BE /* DashboardController.swift */; };
 		FA2798C71E25EA4C004102C4 /* ExtraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2798C61E25EA4C004102C4 /* ExtraController.swift */; };
 		FA789BFB1E283E190077954B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA789BFA1E283E190077954B /* Colors.swift */; };
+		FA7FF6101E2D3ABF00885221 /* FormsHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF60F1E2D3ABF00885221 /* FormsHomeController.swift */; };
+		FA7FF6121E2D3AF300885221 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF6111E2D3AF300885221 /* QuestionController.swift */; };
+		FA7FF6141E2D3B6000885221 /* FormDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF6131E2D3B6000885221 /* FormDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,7 @@
 		FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA18C4931E21F7050053AEC5 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		FA1E0A0B1E2BD4A8008C9D13 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		FA2281751E2B4C3D007B1AFE /* EditProfileCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileCard.swift; sourceTree = "<group>"; };
 		FA2323A81E29EE40001594BE /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
 		FA2323AA1E29EFA0001594BE /* ClassesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesController.swift; sourceTree = "<group>"; };
@@ -73,6 +78,9 @@
 		FA2323AE1E29FB3A001594BE /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		FA2798C61E25EA4C004102C4 /* ExtraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraController.swift; sourceTree = "<group>"; };
 		FA789BFA1E283E190077954B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FA7FF60F1E2D3ABF00885221 /* FormsHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormsHomeController.swift; sourceTree = "<group>"; };
+		FA7FF6111E2D3AF300885221 /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
+		FA7FF6131E2D3B6000885221 /* FormDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,9 @@
 				FA2798C61E25EA4C004102C4 /* ExtraController.swift */,
 				FA2323AA1E29EFA0001594BE /* ClassesController.swift */,
 				FA2323AE1E29FB3A001594BE /* DashboardController.swift */,
+				FA7FF60F1E2D3ABF00885221 /* FormsHomeController.swift */,
+				FA7FF6131E2D3B6000885221 /* FormDetailController.swift */,
+				FA7FF6111E2D3AF300885221 /* QuestionController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -184,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				FA789BFA1E283E190077954B /* Colors.swift */,
+				FA1E0A0B1E2BD4A8008C9D13 /* Utilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -337,11 +349,15 @@
 				FA2323A91E29EE40001594BE /* ClassCell.swift in Sources */,
 				FA18C48D1E21EFDB0053AEC5 /* ProfileViewController.swift in Sources */,
 				FA18C4911E21F5660053AEC5 /* ClassCollectionViewCell.swift in Sources */,
+				FA7FF6101E2D3ABF00885221 /* FormsHomeController.swift in Sources */,
+				FA7FF6141E2D3B6000885221 /* FormDetailController.swift in Sources */,
 				FA2323AD1E29F9D0001594BE /* StarRatingView.swift in Sources */,
 				FA0811B01E1F3ABA00C9D314 /* AppDelegate.swift in Sources */,
+				FA1E0A0C1E2BD4A8008C9D13 /* Utilities.swift in Sources */,
 				FA2281761E2B4C3D007B1AFE /* EditProfileCard.swift in Sources */,
 				FA2323AB1E29EFA0001594BE /* ClassesController.swift in Sources */,
 				FA789BFB1E283E190077954B /* Colors.swift in Sources */,
+				FA7FF6121E2D3AF300885221 /* QuestionController.swift in Sources */,
 				FA2323AF1E29FB3A001594BE /* DashboardController.swift in Sources */,
 				FA18C4941E21F7050053AEC5 /* Class.swift in Sources */,
 				FA1681031E2B5719006FA815 /* ClassStockCell.swift in Sources */,

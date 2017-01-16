@@ -17,8 +17,18 @@ class FeedbackCell: UITableViewCell {
     @IBOutlet weak var feedbackLabel : UILabel!
     @IBOutlet weak var postedAgo : UILabel!
     
+    
+    
     func styleCell(){
         backgroundContainerView.layer.borderColor = globalColors.boarders.cgColor
         backgroundContainerView.layer.borderWidth = 1
+        self.backgroundColor = globalColors.background
     }
+    
+
+    
+//    func addTapGestureRecognizer(){
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(getter: closureUpdateAllTickers))
+//        self.addGestureRecognizer(tap)
+//    }
 }
