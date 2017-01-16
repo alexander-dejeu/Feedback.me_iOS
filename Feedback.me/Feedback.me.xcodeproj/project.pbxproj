@@ -32,6 +32,7 @@
 		FA7FF6121E2D3AF300885221 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF6111E2D3AF300885221 /* QuestionController.swift */; };
 		FA7FF6141E2D3B6000885221 /* FormDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF6131E2D3B6000885221 /* FormDetailController.swift */; };
 		FA7FF6181E2D569500885221 /* MasteryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF6171E2D569500885221 /* MasteryCell.swift */; };
+		FA7FF61A1E2D731A00885221 /* FormCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF6191E2D731A00885221 /* FormCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		FA7FF6111E2D3AF300885221 /* QuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		FA7FF6131E2D3B6000885221 /* FormDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormDetailController.swift; sourceTree = "<group>"; };
 		FA7FF6171E2D569500885221 /* MasteryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasteryCell.swift; sourceTree = "<group>"; };
+		FA7FF6191E2D731A00885221 /* FormCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				FA1681041E2B573A006FA815 /* FeedbackCell.swift */,
 				FA1681061E2B57BA006FA815 /* SettingsCell.swift */,
 				FA7FF6171E2D569500885221 /* MasteryCell.swift */,
+				FA7FF6191E2D731A00885221 /* FormCollectionCell.swift */,
 			);
 			path = "Custom Elements";
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				FA2323AF1E29FB3A001594BE /* DashboardController.swift in Sources */,
 				FA18C4941E21F7050053AEC5 /* Class.swift in Sources */,
 				FA1681031E2B5719006FA815 /* ClassStockCell.swift in Sources */,
+				FA7FF61A1E2D731A00885221 /* FormCollectionCell.swift in Sources */,
 				FA2798C71E25EA4C004102C4 /* ExtraController.swift in Sources */,
 				FA18C48F1E21F03E0053AEC5 /* ProfileCard.swift in Sources */,
 				FA1681071E2B57BA006FA815 /* SettingsCell.swift in Sources */,

@@ -24,8 +24,7 @@ class QuestionController: UIViewController {
     ["3","Approaching","Exhibits more than half of the key characteristics consistently."],
     ["4","Overtaking","Exhibits all the key characteristics consistently."],
     ["5","Innovating","Innovates new ways to embody and express the competency."] ]
-    
-    
+    var selectedLevel = -1
     
     
     //MARK: - View Lifecycle
@@ -44,14 +43,27 @@ class QuestionController: UIViewController {
 
 extension QuestionController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
+        if selectedLevel == -1 {
+            UIView.animate(withDuration: 0.8, delay: 0.1,
+                           usingSpringWithDamping: 1.0,
+                           initialSpringVelocity: 0.5,
+                           options: [], animations: {
+                            self.nextView.center.x += self.view.bounds.width
+            }, completion: nil)
+        }
+        
+        if selectedLevel != -1 {
+            let tempCell = masteryCollectionView.cellForItem(at: IndexPath(item: selectedLevel, section: 0 )) as! MasteryCell
+            tempCell.chosenRubric = false
+            tempCell.selectedStyle()
+        }
+        
+        let cell = masteryCollectionView.cellForItem(at: indexPath) as! MasteryCell
+        selectedLevel = indexPath.item
+        cell.chosenRubric = true
+        cell.selectedStyle()
         print("You selected cell #\(indexPath.item)!")
-        UIView.animate(withDuration: 0.8, delay: 0.1,
-                                   usingSpringWithDamping: 1.0,
-                                   initialSpringVelocity: 0.5,
-                                   options: [], animations: {
-                                    self.nextView.center.x += self.view.bounds.width
-        }, completion: nil)
+        
     }
 }
 

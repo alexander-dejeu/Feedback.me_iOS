@@ -27,12 +27,15 @@ class MasteryCell: UICollectionViewCell {
     func selectedStyle(){
         if chosenRubric {
             self.backgroundColor = globalColors.student
+            self.rubricView.backgroundColor = globalColors.student
+            self.detailView.backgroundColor = globalColors.student
             detailLabel.textColor = .white
             masteryLabel.textColor = .white
             masteryTitleLabel.textColor = .white
         }
         else {
-            self.backgroundColor = globalColors.student
+            self.backgroundColor = .white
+            self.rubricView.backgroundColor = .white
             detailLabel.textColor = .black
             masteryLabel.textColor = .black
             masteryTitleLabel.textColor = .black
