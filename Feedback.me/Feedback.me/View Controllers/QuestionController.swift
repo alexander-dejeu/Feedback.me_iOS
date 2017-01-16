@@ -32,6 +32,11 @@ class QuestionController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        nextView.isHidden = true
+        nextView.center.x -= view.bounds.width
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         nextView.center.x -= view.bounds.width
@@ -44,6 +49,7 @@ class QuestionController: UIViewController {
 extension QuestionController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if selectedLevel == -1 {
+            nextView.isHidden = false
             UIView.animate(withDuration: 0.8, delay: 0.1,
                            usingSpringWithDamping: 1.0,
                            initialSpringVelocity: 0.5,

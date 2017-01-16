@@ -21,13 +21,15 @@ class FormDetailController: UIViewController {
     @IBOutlet weak var peerLabel : UILabel!
     @IBOutlet weak var teacherLabel : UILabel!
     @IBOutlet weak var scrollView : UIScrollView!
+    @IBOutlet weak var formHeaderBackgroundView : UIView!
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         styleCards()
-        
-//        scrollView.backgroundColor = globalColors.background
+        formHeaderBackgroundView.layer.borderWidth = 1
+        formHeaderBackgroundView.layer.borderColor = globalColors.boarders.cgColor
+        scrollView.backgroundColor = globalColors.background
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapCard(_:)))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.cancelsTouchesInView = false
