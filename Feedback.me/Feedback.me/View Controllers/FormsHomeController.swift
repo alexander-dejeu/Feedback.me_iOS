@@ -10,12 +10,12 @@ import UIKit
 
 class FormsHomeController: UIViewController {
 
-    
+    @IBOutlet weak var formsScrollView: UIScrollView!
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        formsScrollView.backgroundColor = globalColors.background
     }
     
 
@@ -42,6 +42,7 @@ extension FormsHomeController : UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "formCell", for: indexPath as IndexPath) as! FormCollectionCell
+        cell.styleCell()
         return cell
     }
 

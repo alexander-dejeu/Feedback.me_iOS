@@ -13,4 +13,10 @@ class FormCollectionCell: UICollectionViewCell {
     @IBOutlet weak var forClassLabel : UILabel!
     @IBOutlet weak var sentLabel : UILabel!
     @IBOutlet weak var accentView : UIView!
+    
+    func styleCell(){
+        self.layer.borderColor = globalColors.boarders.cgColor
+        self.layer.borderWidth = 1
+        self.backgroundColor = .white
+    }
 }

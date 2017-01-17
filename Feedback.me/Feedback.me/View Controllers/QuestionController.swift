@@ -16,6 +16,8 @@ class QuestionController: UIViewController {
     @IBOutlet weak var skillsLabel : UILabel!
     @IBOutlet weak var masteryCollectionView : UICollectionView!
     @IBOutlet weak var nextView : UIView!
+    @IBOutlet weak var nextLabel : UILabel!
+    @IBOutlet weak var questionScrollView: UIScrollView!
     
     var rubric : [[String]] =
         [["0","Waiting", "Exhibits fewer than 1/2 of the key characteristics of the competency without consistency."],
@@ -30,20 +32,40 @@ class QuestionController: UIViewController {
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.nextTapped(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.isEnabled = true
+        nextView.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        nextView.isHidden = true
-        nextView.center.x -= view.bounds.width
+        if selectedLevel == -1 {
+            nextView.isHidden = true
+        }
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        nextView.center.x -= view.bounds.width
+        if selectedLevel == -1 && nextView.center.x > 0 {
+            
+            nextView.center.x -= view.bounds.width
+        }
     }
 
     // MARK: - Navigation
 
+    
+    func nextTapped(_ sender: UITapGestureRecognizer){
+        questionScrollView.setContentOffset(CGPoint(x: 0.0, y: -64.0)  , animated: true)
+        nextView.isHidden = true
+        nextView.center.x -= view.bounds.width
+        let cell = masteryCollectionView.cellForItem(at: IndexPath(item: selectedLevel, section: 0 )) as! MasteryCell
+        cell.chosenRubric = false
+        selectedLevel = -1
+        cell.selectedStyle()
+    }
 }
 
 extension QuestionController : UICollectionViewDelegate {

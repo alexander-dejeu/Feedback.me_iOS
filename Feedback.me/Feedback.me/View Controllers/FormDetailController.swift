@@ -56,6 +56,14 @@ class FormDetailController: UIViewController {
         self.performSegue(withIdentifier: "segueFromFormDetailsToQuestions", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "segueFromFormDetailsToQuestions"){
+            let DestViewController = segue.destination as! QuestionController
+            
+        }
+    }
+
+    
     
     //MARK: - Helpers
     func styleCards(){
