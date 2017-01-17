@@ -33,6 +33,8 @@
 		FA7FF6141E2D3B6000885221 /* FormDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF6131E2D3B6000885221 /* FormDetailController.swift */; };
 		FA7FF6181E2D569500885221 /* MasteryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF6171E2D569500885221 /* MasteryCell.swift */; };
 		FA7FF61A1E2D731A00885221 /* FormCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF6191E2D731A00885221 /* FormCollectionCell.swift */; };
+		FA7FF61C1E2D8F9A00885221 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF61B1E2D8F9A00885221 /* Comment.swift */; };
+		FA7FF61E1E2D902D00885221 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7FF61D1E2D902D00885221 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		FA7FF6131E2D3B6000885221 /* FormDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormDetailController.swift; sourceTree = "<group>"; };
 		FA7FF6171E2D569500885221 /* MasteryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasteryCell.swift; sourceTree = "<group>"; };
 		FA7FF6191E2D731A00885221 /* FormCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCollectionCell.swift; sourceTree = "<group>"; };
+		FA7FF61B1E2D8F9A00885221 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		FA7FF61D1E2D902D00885221 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				FA18C4931E21F7050053AEC5 /* Class.swift */,
+				FA7FF61B1E2D8F9A00885221 /* Comment.swift */,
+				FA7FF61D1E2D902D00885221 /* User.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				FA7FF6141E2D3B6000885221 /* FormDetailController.swift in Sources */,
 				FA2323AD1E29F9D0001594BE /* StarRatingView.swift in Sources */,
 				FA0811B01E1F3ABA00C9D314 /* AppDelegate.swift in Sources */,
+				FA7FF61C1E2D8F9A00885221 /* Comment.swift in Sources */,
 				FA1E0A0C1E2BD4A8008C9D13 /* Utilities.swift in Sources */,
 				FA2281761E2B4C3D007B1AFE /* EditProfileCard.swift in Sources */,
 				FA2323AB1E29EFA0001594BE /* ClassesController.swift in Sources */,
@@ -372,6 +379,7 @@
 				FA2798C71E25EA4C004102C4 /* ExtraController.swift in Sources */,
 				FA18C48F1E21F03E0053AEC5 /* ProfileCard.swift in Sources */,
 				FA1681071E2B57BA006FA815 /* SettingsCell.swift in Sources */,
+				FA7FF61E1E2D902D00885221 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

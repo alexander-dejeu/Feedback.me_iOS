@@ -8,11 +8,13 @@
 
 import Foundation
 class Class {
-    var title : String
-    var instructor : String
+    var fullTitle : String
+    var tickerTitle : String
+    var instructor : User
     
-    init(title : String, instructor : String) {
-        self.title = title
+    init(fullTitle : String, tickerTitle: String, instructor : User) {
+        self.fullTitle = fullTitle
+        self.tickerTitle = tickerTitle
         self.instructor = instructor
     }
 }

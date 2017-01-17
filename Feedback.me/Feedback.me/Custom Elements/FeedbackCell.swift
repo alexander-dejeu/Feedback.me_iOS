@@ -16,6 +16,7 @@ class FeedbackCell: UITableViewCell {
     @IBOutlet weak var fromClassLabel : UILabel!
     @IBOutlet weak var feedbackLabel : UILabel!
     @IBOutlet weak var postedAgo : UILabel!
+    @IBOutlet weak var postedByLabel : UILabel!
     
     
     

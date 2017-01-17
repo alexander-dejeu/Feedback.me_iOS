@@ -9,13 +9,19 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    
+    //MARK: - IBOutlets
     @IBOutlet weak var userProfile: ProfileCard!
     @IBOutlet weak var editProfile: EditProfileCard!
     @IBOutlet weak var classesCollectionView: UICollectionView!
     
-    var items: [Class] = [Class(title: "Calculus IV", instructor: "Mrs. Steingold"), Class(title: "European History", instructor: "Mr. Jewells"), Class(title: "French III", instructor: "Mme. Wildfong")]
     
+    //MARK: - Properties
+    var items: [Class] = [Class(fullTitle: "Calculus IV", tickerTitle: "CALC 1024", instructor: User(fullName : "Mrs. Steingold", profilePictureName : "profile1", role: .instructor)),
+                          Class(fullTitle: "European History", tickerTitle: "CALC 1024", instructor: User(fullName : "Mr. Jewells", profilePictureName : "profile2", role: .instructor)),
+                          Class(fullTitle: "French III", tickerTitle: "CALC 1024", instructor: User(fullName : "Mme. Wildfong", profilePictureName : "profile1", role: .instructor))]
+    
+    
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userProfile.setupEdit()
@@ -90,8 +96,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClassCell", for: indexPath as IndexPath) as! ClassCollectionViewCell
-        cell.classTitleLabel.text = items[indexPath.row].title
-        cell.classInstructorLabel.text = items[indexPath.row].instructor
+        cell.classTitleLabel.text = items[indexPath.row].fullTitle
+        cell.classInstructorLabel.text = items[indexPath.row].instructor.fullName
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
 //        cell.myLabel.text = self.items[indexPath.item]
 //        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
