@@ -22,10 +22,13 @@ class FormDetailController: UIViewController {
     @IBOutlet weak var teacherLabel : UILabel!
     @IBOutlet weak var scrollView : UIScrollView!
     @IBOutlet weak var formHeaderBackgroundView : UIView!
+    @IBOutlet weak var checkboxLabel : UILabel!
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
+        self.title = "MA 1024"
         super.viewDidLoad()
+        checkboxLabel.isHidden = true
         styleCards()
         formHeaderBackgroundView.layer.borderWidth = 1
         formHeaderBackgroundView.layer.borderColor = globalColors.boarders.cgColor
@@ -59,8 +62,15 @@ class FormDetailController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "segueFromFormDetailsToQuestions"){
             let DestViewController = segue.destination as! QuestionController
-            
+            let getData = CreateData()
+            let data = getData.demoQuestions()
+            DestViewController.questions = data
         }
+    }
+    
+    @IBAction func unwindToFormDetail(segue : UIStoryboardSegue){
+        print("yeee we unwinded")
+        checkboxLabel.isHidden = false
     }
 
     

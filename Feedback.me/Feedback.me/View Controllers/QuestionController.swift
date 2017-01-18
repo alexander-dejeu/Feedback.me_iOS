@@ -28,6 +28,10 @@ class QuestionController: UIViewController {
     ["5","Innovating","Innovates new ways to embody and express the competency."] ]
     var selectedLevel = -1
     
+    var questions : [Question] = []
+    var responses : [Response] = []
+    var questionIndex = 0
+    
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -49,22 +53,60 @@ class QuestionController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if selectedLevel == -1 && nextView.center.x > 0 {
-            
             nextView.center.x -= view.bounds.width
         }
     }
 
+    
+    //MARK: - Helpers
+    func formatSkills(text: [String]) -> String {
+        var result  = ""
+        for skill in text {
+            result += "• " + skill + "\n"
+        }
+        return result
+    }
+    func setupQuestion(){
+        if (questionIndex < questions.count){
+            competencyLabel.text = questions[questionIndex].competency
+            skillsLabel.text = formatSkills(text: questions[questionIndex].skills)
+        }
+        else{
+            print("we should segue back!")
+            self.performSegue(withIdentifier: "unwindToFormDetail", sender: nil)
+        }
+//        if selectedLevel == -1 && nextView.center.x > 0 {
+//            print("Does this happen mate?")
+//            nextView.center.x -= view.bounds.width
+//        }
+        
+    }
+    
+    
     // MARK: - Navigation
-
     
     func nextTapped(_ sender: UITapGestureRecognizer){
-        questionScrollView.setContentOffset(CGPoint(x: 0.0, y: -64.0)  , animated: true)
+//        let answer = Response(toQuestion: <#T##Question#>, answer: <#T##Any?#>)
+        print("current: \(self.nextView.center.x)")
+        
+        
+        
         nextView.isHidden = true
-        nextView.center.x -= view.bounds.width
+        self.nextView.center.x -= self.view.bounds.width
+        print(self.view.bounds.width)
+        print(self.nextView.center.x)
         let cell = masteryCollectionView.cellForItem(at: IndexPath(item: selectedLevel, section: 0 )) as! MasteryCell
         cell.chosenRubric = false
         selectedLevel = -1
         cell.selectedStyle()
+        
+        questionScrollView.setContentOffset(CGPoint(x: 0.0, y: -64.0)  , animated: true)
+        
+        questionIndex += 1
+        setupQuestion()
+        self.nextView.center.x -= self.view.bounds.width
+        print("new updated: \(nextView.center.x)")
+
     }
 }
 
@@ -72,6 +114,10 @@ extension QuestionController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if selectedLevel == -1 {
             nextView.isHidden = false
+            if questionIndex > 0 {
+                self.nextView.center.x -= self.view.bounds.width
+            }
+
             UIView.animate(withDuration: 0.8, delay: 0.1,
                            usingSpringWithDamping: 1.0,
                            initialSpringVelocity: 0.5,

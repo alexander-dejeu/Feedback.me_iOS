@@ -11,11 +11,12 @@ import UIKit
 class FormsHomeController: UIViewController {
 
     @IBOutlet weak var formsScrollView: UIScrollView!
-    
+
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         formsScrollView.backgroundColor = globalColors.background
+        self.title = "Forms"
     }
     
 
@@ -40,9 +41,14 @@ extension FormsHomeController : UICollectionViewDataSource {
         print(cellWidth)
         return CGSize(width: cellWidth, height: cellHeight);
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "formCell", for: indexPath as IndexPath) as! FormCollectionCell
         cell.styleCell()
+        var formClassesData = ["MA 1024", "HI 2036", "EN 1010"]
+        var formSentData = ["Sent: 01/17/17", "Sent: 01/14/17", "Sent: 01/13/17"]
+        cell.forClassLabel.text = formClassesData[indexPath.row]
+        cell.sentLabel.text = formSentData[indexPath.row]
         return cell
     }
 

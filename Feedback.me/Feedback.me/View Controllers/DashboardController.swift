@@ -53,14 +53,14 @@ class DashboardController: UIViewController {
     
     //MARK: - Helpers
     func createComments() -> [Comment]{
-        let user1 = User(fullName : "Alexander Dejeu", profilePictureName : "profile1", role: .student)
-        let user2 = User(fullName : "Samual Adams", profilePictureName : "profile1", role: .student)
-        let user3 = User(fullName : "Adam Braus", profilePictureName : "profile1", role: .student)
-        let user4 = User(fullName : "Kenny Batista", profilePictureName : "profile1", role: .student)
+        let user1 = User(fullName : "Alexander Dejeu", profilePictureName : "users-15", role: .student)
+        let user2 = User(fullName : "Samual Adams", profilePictureName : "users-15", role: .student)
+        let user3 = User(fullName : "Adam Braus", profilePictureName : "users-15", role: .student)
+        let user4 = User(fullName : "Kenny Batista", profilePictureName : "users-15", role: .student)
         
-        let teacher1 = User(fullName : "Mrs. Steingold", profilePictureName : "profile1", role: .instructor)
-        let teacher2 = User(fullName : "Mr. Jewells", profilePictureName : "profile2", role: .instructor)
-        let teacher3 = User(fullName : "Mme. Wildfong", profilePictureName : "profile1", role: .instructor)
+        let teacher1 = User(fullName : "Mrs. Steingold", profilePictureName : "users-15", role: .instructor)
+        let teacher2 = User(fullName : "Mr. Jewells", profilePictureName : "users-15", role: .instructor)
+        let teacher3 = User(fullName : "Mme. Wildfong", profilePictureName : "users-15", role: .instructor)
         
         let class1 = Class(fullTitle : "French III", tickerTitle: "FL 2013", instructor : teacher3)
         let class2 = Class(fullTitle : "Calculus II", tickerTitle: "MA 1022", instructor : teacher2)
