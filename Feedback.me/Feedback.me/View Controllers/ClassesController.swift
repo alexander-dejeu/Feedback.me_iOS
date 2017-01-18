@@ -10,23 +10,45 @@ import UIKit
 
 class ClassesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var classroomData : [Class] = []
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Classrooms"
+        classroomData = getAllClasses()
     }
     
     
     //MARK: - TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return classroomData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as! ClassCell
+        cell.cellColorHighlight.backgroundColor = globalColors.getAccentForClass(classSubject: classroomData[indexPath.row].classSubject)
+        cell.classTitle.text = classroomData[indexPath.row].fullTitle
+        cell.classGrade.text = classroomData[indexPath.row].instructor.fullName
+        
         cell.styleCell()
+        
         return cell
+    }
+    
+    func getAllClasses() -> [Class]{
+        var results : [Class] = []
+            
+            let teacher1 = User(fullName : "Mrs. Steingold", profilePictureName : "users-15", role: .instructor)
+            let teacher2 = User(fullName : "Mr. Jewells", profilePictureName : "users-15", role: .instructor)
+            let teacher3 = User(fullName : "Mme. Wildfong", profilePictureName : "users-15", role: .instructor)
+            
+            let class1 = Class(fullTitle : "French III", tickerTitle: "FL 2013", instructor : teacher3, classSubject: .language)
+            let class2 = Class(fullTitle : "Calculus II", tickerTitle: "MA 1022", instructor : teacher2, classSubject: .math)
+            let class3 = Class(fullTitle : "American History", tickerTitle: "HI 2242", instructor : teacher1, classSubject: .history)
+        results = [class1, class2, class3]
+        
+        return results
     }
     
     // MARK: - Navigation

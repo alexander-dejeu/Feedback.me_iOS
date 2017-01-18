@@ -63,9 +63,9 @@ class DashboardController: UIViewController {
         let teacher2 = User(fullName : "Mr. Jewells", profilePictureName : "users-15", role: .instructor)
         let teacher3 = User(fullName : "Mme. Wildfong", profilePictureName : "users-15", role: .instructor)
         
-        let class1 = Class(fullTitle : "French III", tickerTitle: "FL 2013", instructor : teacher3)
-        let class2 = Class(fullTitle : "Calculus II", tickerTitle: "MA 1022", instructor : teacher2)
-        let class3 = Class(fullTitle : "American History", tickerTitle: "HI 2242", instructor : teacher1)
+        let class1 = Class(fullTitle : "French III", tickerTitle: "FL 2013", instructor : teacher3, classSubject: .language)
+        let class2 = Class(fullTitle : "Calculus II", tickerTitle: "MA 1022", instructor : teacher2, classSubject: .math)
+        let class3 = Class(fullTitle : "American History", tickerTitle: "HI 2242", instructor : teacher1, classSubject: .history)
         
         let date = Date()
         let date1 = Date(timeInterval: -1000, since: date)

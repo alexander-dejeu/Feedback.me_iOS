@@ -16,9 +16,9 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     
     //MARK: - Properties
-    var items: [Class] = [Class(fullTitle: "Calculus IV", tickerTitle: "CALC 1024", instructor: User(fullName : "Mrs. Steingold", profilePictureName : "profile1", role: .instructor)),
-                          Class(fullTitle: "European History", tickerTitle: "CALC 1024", instructor: User(fullName : "Mr. Jewells", profilePictureName : "profile2", role: .instructor)),
-                          Class(fullTitle: "French III", tickerTitle: "CALC 1024", instructor: User(fullName : "Mme. Wildfong", profilePictureName : "profile1", role: .instructor))]
+    var items: [Class] = [Class(fullTitle: "Calculus IV", tickerTitle: "CALC 1024", instructor: User(fullName : "Mrs. Steingold", profilePictureName : "profile1", role: .instructor), classSubject: .math),
+                          Class(fullTitle: "European History", tickerTitle: "CALC 1024", instructor: User(fullName : "Mr. Jewells", profilePictureName : "profile2", role: .instructor), classSubject: .history),
+                          Class(fullTitle: "French III", tickerTitle: "CALC 1024", instructor: User(fullName : "Mme. Wildfong", profilePictureName : "profile1", role: .instructor), classSubject: .math)]
     
     
     //MARK: - View Lifecycle

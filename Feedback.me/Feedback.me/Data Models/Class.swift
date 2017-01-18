@@ -11,10 +11,12 @@ class Class {
     var fullTitle : String
     var tickerTitle : String
     var instructor : User
+    var classSubject : subject
     
-    init(fullTitle : String, tickerTitle: String, instructor : User) {
+    init(fullTitle : String, tickerTitle: String, instructor : User, classSubject : subject ) {
         self.fullTitle = fullTitle
         self.tickerTitle = tickerTitle
         self.instructor = instructor
+        self.classSubject = classSubject
     }
 }

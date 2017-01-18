@@ -18,4 +18,41 @@ struct globalColors {
     
     static var stockRed = UIColor(red: 244.0/255.0, green: 85.0/255.0, blue: 49.0/255.0, alpha: 1.0)
     static var stockGreen = UIColor(red: 33.0/255.0, green: 206.0/255.0, blue: 153.0/255.0, alpha: 1.0)
+    
+    static var subjectMath = UIColor(red: 74.0/255.0, green: 144.0/255.0, blue: 226.0/255.0, alpha: 1.0)
+    static var subjectHistory = UIColor(red: 208.0/255.0, green: 1.0/255.0, blue: 27.0/255.0, alpha: 1.0)
+    static var subjectScience = UIColor(red: 248.0/255.0, green: 231.0/255.0, blue: 28.0/255.0, alpha: 1.0)
+    static var subjectLanguage = UIColor(red: 144.0/255.0, green: 19.0/255.0, blue: 254.0/255.0, alpha: 1.0)
+    static var subjectEnglish = UIColor(red: 80.0/255.0, green: 227.0/255.0, blue: 194.0/255.0, alpha: 1.0)
+    static var subjectDefault = UIColor(red: 74.0/255.0, green: 144.0/255.0, blue: 226.0/255.0, alpha: 1.0)
+    
+    static func getAccentForClass(classSubject : subject) -> UIColor{
+        switch classSubject {
+        case .math:
+            return subjectMath
+        case .history:
+            return subjectHistory
+        case .science:
+            return subjectScience
+        case .language:
+            return subjectLanguage
+        case .english:
+            return subjectEnglish
+        default:
+            return subjectDefault
+        }
+        
+    }
+
+
 }
+
+enum subject {
+    case math
+    case history
+    case science
+    case language
+    case english
+    case other
+}
+
