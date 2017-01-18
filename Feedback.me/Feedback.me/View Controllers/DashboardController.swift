@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ScrollableGraphView
 
 class DashboardController: UIViewController {
     //MARK: - IBOutlets
@@ -96,7 +97,59 @@ extension DashboardController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch segmentedController.selectedSegmentIndex {
         case 1:
+            let data: [Double] = [4, 3, 2.6, 3.2, 1.8, 4.8]
+            var isImproving : Bool = false
+            var dataColor = globalColors.stockRed
+            
+            if data[data.count-1] > data[data.count-2]{
+                isImproving = true
+                dataColor = globalColors.stockGreen
+            }
+            
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "classStockCell") as! ClassStockCell
+            let startingX = cell.classTickerLabel.frame.width + cell.classTickerLabel.frame.origin.x
+            let endingX = cell.classChangeBackground.frame.origin.x
+            
+            let chartCenterX = startingX + (endingX - startingX)/2
+            let chartCenterY = cell.classTickerLabel.center.y
+            
+            
+            let graphView = ScrollableGraphView(frame: CGRect(x: 0, y: 0, width: 90, height: 40))
+            graphView.center = CGPoint(x: chartCenterX, y: chartCenterY)
+            graphView.lineWidth = 1
+            graphView.rangeMax = 5
+            graphView.rangeMin = 2.5
+            graphView.dataPointSize = 1.5
+            graphView.dataPointSpacing = 6
+            graphView.shouldAddLabelsToIntermediateReferenceLines = false
+            graphView.shouldShowReferenceLines = false
+            graphView.leftmostPointPadding = 5
+            graphView.rightmostPointPadding = 5
+            graphView.topMargin = 0
+            graphView.bottomMargin = 0
+            graphView.animationDuration = 0.1
+            
+            graphView.dataPointFillColor = dataColor
+            graphView.lineColor = dataColor
+            
+            cell.classChangeBackground.backgroundColor = dataColor
+            cell.classChangeBackground.layer.cornerRadius = 5
+            cell.classChangeLabel.text = "★ \(String(data[data.count - 1]))"
+            
+            cell.setupTickerTapped() 
+            
+            cell.data = data
+            
+//            graphView.backgroundFillColor = .green
+            
+            print(graphView.center)
+            print(graphView.frame)
+        
+//            let labels = ["one", "two", "three", "four", "five", "six"]
+            graphView.set(data: data, withLabels: [])
+            cell.backgroundContainerView.addSubview(graphView)
+            
             cell.styleCell()
             return cell
         case 2:

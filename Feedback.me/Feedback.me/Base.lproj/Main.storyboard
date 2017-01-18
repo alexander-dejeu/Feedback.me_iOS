@@ -90,7 +90,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Edit"/>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IfH-my-NWn">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="users-18" translatesAutoresizingMaskIntoConstraints="NO" id="IfH-my-NWn">
                                                 <rect key="frame" x="118" y="16" width="125" height="125"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="125" id="aZ5-xO-kFr"/>
@@ -1262,5 +1262,6 @@
         <image name="OrangeAnnouncement" width="66" height="51"/>
         <image name="PersonOutline" width="39" height="51"/>
         <image name="Profile" width="28" height="30"/>
+        <image name="users-18" width="63" height="63"/>
     </resources>
 </document>

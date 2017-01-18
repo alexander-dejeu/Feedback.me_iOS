@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ScrollableGraphView
 
 class ClassStockCell: UITableViewCell {
     @IBOutlet weak var backgroundContainerView: UIView!
@@ -15,7 +16,7 @@ class ClassStockCell: UITableViewCell {
     @IBOutlet weak var classChangeLabel : UILabel!
     @IBOutlet weak var backgroundAccentView: UIView!
     
-    var closureUpdateAllTickers : (()->())? = nil
+    var data : [Double] = []
     
     func styleCell(){
         backgroundContainerView.layer.borderColor = globalColors.boarders.cgColor
@@ -24,6 +25,22 @@ class ClassStockCell: UITableViewCell {
     }
     
     func setupTickerTapped(){
-        classChangeBackground.addTapGesture(tapNumber: 1, target: self, action: #selector(getter: closureUpdateAllTickers))
+        classChangeBackground.addTapGesture(tapNumber: 1, target: self, action: #selector(self.togglePercentStar))
+    }
+    
+    func togglePercentStar(){
+        if classChangeLabel.text?.characters.first == "%"{
+            classChangeLabel.text = "★ \(String(data[data.count - 1]))"
+        }
+        else if classChangeLabel.text?.characters.first == "★"{
+            var percentageChange = 0.0
+            if data[data.count - 1] > data[data.count - 2]{
+                percentageChange = (1.0 - data[data.count - 2] / data[data.count - 1]) * 100.0
+            }
+            else{
+                percentageChange = (1.0 - data[data.count - 1] / data[data.count - 2]) * 100.0
+            }
+            classChangeLabel.text = "% \(percentageChange)"
+        }
     }
 }

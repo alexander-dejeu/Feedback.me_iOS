@@ -14,6 +14,7 @@ class ClassesController: UIViewController, UITableViewDelegate, UITableViewDataS
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Classrooms"
     }
     
     
