@@ -1,0 +1,6 @@
+framework module Pods_Feedback_me {
+  umbrella header "Pods-Feedback.me-umbrella.h"
+
+  export *
+  module * { export * }
+}

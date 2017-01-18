@@ -21,6 +21,7 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Extras"
         self.view.backgroundColor = globalColors.background
         
         self.settingsTableView.backgroundColor = globalColors.background

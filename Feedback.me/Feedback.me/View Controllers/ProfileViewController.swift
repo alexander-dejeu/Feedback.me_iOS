@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
+        self.title = "Profile"
         super.viewDidLoad()
         self.userProfile.setupEdit()
         self.userProfile.style()

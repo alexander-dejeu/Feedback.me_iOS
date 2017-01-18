@@ -1,0 +1,6 @@
+framework module Pods_Feedback_meUITests {
+  umbrella header "Pods-Feedback.meUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
