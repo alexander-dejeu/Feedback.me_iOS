@@ -17,6 +17,9 @@ class DashboardController: UIViewController {
     
     
     var commentsData : [Comment] = []
+    var classesData : [Class] = []
+    var staticData : [[Double]] = []
+    
     //MARK: - IBActions
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -40,12 +43,15 @@ class DashboardController: UIViewController {
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        staticData = [[4.3,2.6,2.8,4.9,4.7],[3.2,3.2,3.2,3.1,3.5],[4.2,3.8,3.6,3.8,4.0],[3.6,3.5,3.5,3.7,4.2], [4.1,4.2,3.8,2.2, 2.8]]
+
         dashboardTableView.separatorStyle = .none
         dashboardTableView.tableFooterView = UIView()
         dashboardTableView.estimatedRowHeight = 250
         dashboardTableView.rowHeight = UITableViewAutomaticDimension
         
         commentsData = createComments()
+        classesData = createClasses()
     }
 
     
@@ -79,6 +85,19 @@ class DashboardController: UIViewController {
                 Comment(byUser : user4, rating: 1, comment : "Great attitude this week!", posted : date4, forClass : class3)]
 
     }
+    
+    func createClasses() -> [Class]{
+        var results : [Class] = []
+        let teacher1 = User(fullName : "Mrs. Steingold", profilePictureName : "users-15", role: .instructor)
+        let teacher2 = User(fullName : "Mr. Jewells", profilePictureName : "users-15", role: .instructor)
+        let teacher3 = User(fullName : "Mme. Wildfong", profilePictureName : "users-15", role: .instructor)
+        
+        let class1 = Class(fullTitle : "French III", tickerTitle: "FL 2013", instructor : teacher3, classSubject: .language)
+        let class2 = Class(fullTitle : "Calculus II", tickerTitle: "MA 1022", instructor : teacher2, classSubject: .math)
+        let class3 = Class(fullTitle : "American History", tickerTitle: "HI 2242", instructor : teacher1, classSubject: .history)
+        results = [class1, class2, class3]
+        return results
+    }
 
 }
 
@@ -86,7 +105,7 @@ extension DashboardController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segmentedController.selectedSegmentIndex {
         case 1:
-            return 8
+            return classesData.count
         case 2:
             return commentsData.count
         default:
@@ -97,7 +116,7 @@ extension DashboardController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch segmentedController.selectedSegmentIndex {
         case 1:
-            let data: [Double] = [4, 3, 2.6, 3.2, 1.8, 4.8]
+            let data: [Double] = staticData[indexPath.row]
             var isImproving : Bool = false
             var dataColor = globalColors.stockRed
             
@@ -145,6 +164,8 @@ extension DashboardController : UITableViewDataSource {
             
             print(graphView.center)
             print(graphView.frame)
+            cell.classTickerLabel.text = classesData[indexPath.row].tickerTitle
+            cell.backgroundAccentView.backgroundColor = globalColors.getAccentForClass(classSubject: classesData[indexPath.row].classSubject)
         
 //            let labels = ["one", "two", "three", "four", "five", "six"]
             graphView.set(data: data, withLabels: [])

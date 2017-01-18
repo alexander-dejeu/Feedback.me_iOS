@@ -40,7 +40,15 @@ class ClassStockCell: UITableViewCell {
             else{
                 percentageChange = (1.0 - data[data.count - 1] / data[data.count - 2]) * 100.0
             }
-            classChangeLabel.text = "% \(percentageChange)"
+            classChangeLabel.text = "% \(percentageChange.roundTo(places: 2))"
         }
+    }
+}
+
+extension Double {
+    /// Rounds the double to decimal places value
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
 }
