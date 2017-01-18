@@ -7,6 +7,7 @@ target 'Feedback.me' do
 
   # Pods for Feedback.me
   pod 'ScrollableGraphView'
+  pod 'MBCircularProgressBar'
 
   target 'Feedback.meTests' do
     inherit! :search_paths

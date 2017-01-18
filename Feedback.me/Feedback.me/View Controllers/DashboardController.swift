@@ -8,6 +8,7 @@
 
 import UIKit
 import ScrollableGraphView
+import MBCircularProgressBar
 
 class DashboardController: UIViewController {
     //MARK: - IBOutlets
@@ -52,6 +53,22 @@ class DashboardController: UIViewController {
         
         commentsData = createComments()
         classesData = createClasses()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let indexPath = NSIndexPath(item: 2, section: 0)
+        let responseRateCell = dashboardCollectionView.dequeueReusableCell(withReuseIdentifier:  "ResponseRate", for: indexPath as IndexPath) as! ResponseRateCollectionCell
+        print(responseRateCell)
+        let animator2 = responseRateCell.progressBar as? MBCircularProgressBarView
+        animator2?.value = 20
+
+        UIView.animate(withDuration: 1.0, animations: {() -> Void in
+            let animator = responseRateCell.progressBar as? MBCircularProgressBarView
+            animator?.value = 55
+            animator?.emptyLineColor = .blue
+            print("ehh")
+        })
     }
 
     
@@ -217,3 +234,27 @@ extension DashboardController  : UITableViewDelegate {
         }
     }
 }
+
+extension DashboardController : UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let cellWidth = (self.view.frame.width / 2.34) - 12
+        let cellHeight = cellWidth * 1.57
+        return CGSize(width: cellWidth, height: cellHeight);
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ResponseRate", for: indexPath as IndexPath) as! ResponseRateCollectionCell
+        
+
+//        cell.masteryLabel.text = rubric[indexPath.item][0]
+//        cell.masteryTitleLabel.text = rubric[indexPath.item][1]
+//        cell.detailLabel.text = rubric[indexPath.item][2]
+        cell.styleCell()
+        return cell
+    }
+
+}
+

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '70AF962B0E46E8630C041978E7C3F7D8'
-               BlueprintName = 'ScrollableGraphView'
+               BlueprintIdentifier = 'CAC840DD7C14BED838F74AD37CD7CBBA'
+               BlueprintName = 'MBCircularProgressBar-MBCircularProgressBar'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'ScrollableGraphView.framework'>
+               BuildableName = 'MBCircularProgressBar.bundle'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

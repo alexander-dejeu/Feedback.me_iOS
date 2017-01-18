@@ -1,12 +1,15 @@
 PODS:
+  - MBCircularProgressBar (0.3.5)
   - ScrollableGraphView (3.1.0)
 
 DEPENDENCIES:
+  - MBCircularProgressBar
   - ScrollableGraphView
 
 SPEC CHECKSUMS:
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   ScrollableGraphView: e2c8bedc7bbb643e8ac57b9456070d68355c4e4c
 
-PODFILE CHECKSUM: 30c42439fac5a74c8fb25b13e82f1a163b9ec13c
+PODFILE CHECKSUM: da17cef6de1780b81a440c4211a3b5228d66a3f6
 
 COCOAPODS: 1.1.1
