@@ -18,22 +18,17 @@ class FeedbackCell: UITableViewCell {
     @IBOutlet weak var postedAgo : UILabel!
     @IBOutlet weak var postedByLabel : UILabel!
     
-    
-    
     func styleCell(){
         backgroundContainerView.layer.borderColor = globalColors.boarders.cgColor
         backgroundContainerView.layer.borderWidth = 1
         self.backgroundColor = globalColors.background
     }
     
-    func formatDate() -> String{
+    func formatDate(date: Date) -> String{
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
         
+        return formatter.string(from: date)
     }
-    
-
-    
-//    func addTapGestureRecognizer(){
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(getter: closureUpdateAllTickers))
-//        self.addGestureRecognizer(tap)
-//    }
 }

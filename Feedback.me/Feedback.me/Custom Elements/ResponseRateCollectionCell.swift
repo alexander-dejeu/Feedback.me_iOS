@@ -26,5 +26,8 @@ class ResponseRateCollectionCell: UICollectionViewCell {
         progressBar.progressStrokeColor = UIColor(red: 80.0/255.0, green: 227.0/255.0, blue: 194.0/255.0, alpha: 1.0)
         progressBar.emptyLineStrokeColor = UIColor(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1.0)
         
+        self.layer.borderColor = globalColors.boarders.cgColor
+        self.layer.borderWidth = 1
+        
     }
 }

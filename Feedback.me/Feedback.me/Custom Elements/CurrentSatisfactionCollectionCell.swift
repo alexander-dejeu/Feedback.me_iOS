@@ -13,4 +13,9 @@ class CurrentSatisfactionCollectionCell: UICollectionViewCell {
     @IBOutlet weak var currentPercentageChangeLabel : UILabel!
     @IBOutlet weak var lastUpdatedLabel : UILabel!
     
+    func styleCell(){
+        self.layer.borderWidth = 1
+        self.layer.borderColor = globalColors.boarders.cgColor
+    }
+    
 }

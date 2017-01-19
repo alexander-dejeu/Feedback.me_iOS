@@ -197,7 +197,7 @@ extension DashboardController : UITableViewDataSource {
             
             cell.imageView?.image = UIImage(named: comment.byUser.profilePictureName)
             cell.ratingView.addStars(rating: comment.rating)
-            cell.postedAgo.text = comment.posted.description
+            cell.postedAgo.text = cell.formatDate(date: comment.posted)
             cell.feedbackLabel.text = comment.comment
             cell.fromClassLabel.text = comment.forClass.tickerTitle
             cell.postedByLabel.text = comment.byUser.fullName
@@ -245,7 +245,7 @@ extension DashboardController : UICollectionViewDataSource {
         if indexPath.item == 2 {
             return CGSize(width: self.view.frame.width-16, height: 160);
         }
-        let cellWidth = (self.view.frame.width / 2.34) - 12
+        let cellWidth = (self.view.frame.width / 2) - 12
         let cellHeight = cellWidth * 1.57
         return CGSize(width: cellWidth, height: cellHeight);
     }
@@ -254,7 +254,7 @@ extension DashboardController : UICollectionViewDataSource {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CurrentSatisfaction", for: indexPath as IndexPath) as! CurrentSatisfactionCollectionCell
             
-//            cell.styleCell()
+            cell.styleCell()
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ResponseRate", for: indexPath as IndexPath) as! ResponseRateCollectionCell
@@ -266,7 +266,7 @@ extension DashboardController : UICollectionViewDataSource {
             
             cell.contentView.layer.borderColor = globalColors.boarders.cgColor
             cell.contentView.layer.borderWidth = 1
-            let graphView = ScrollableGraphView(frame: CGRect(x: 0, y: 0, width: cell.contentView.frame.width, height: cell.contentView.frame.height))
+            let graphView = ScrollableGraphView(frame: CGRect(x: 4, y: 2, width: cell.contentView.frame.width-8, height: cell.contentView.frame.height-100))
             graphView.shouldDrawBarLayer = true
             graphView.shouldDrawDataPoint = false
             graphView.lineColor = .clear
@@ -274,23 +274,29 @@ extension DashboardController : UICollectionViewDataSource {
             graphView.lineWidth = 1
             graphView.rangeMax = 5
             graphView.rangeMin = 0
-            graphView.dataPointSpacing = 21
+            graphView.dataPointSpacing = 25
             graphView.shouldAddLabelsToIntermediateReferenceLines = false
             graphView.shouldShowReferenceLines = false
             graphView.leftmostPointPadding = 8
             graphView.rightmostPointPadding = 8
             graphView.topMargin = 8
-            graphView.bottomMargin = 8
+            graphView.bottomMargin = 0
             graphView.animationDuration = 0.3
-            graphView.barWidth = 16
+            graphView.barWidth = 20
             graphView.barLineWidth = 0
             graphView.barColor = UIColor(red: 80.0/255.0, green: 227.0/255.0, blue: 194.0/255.0, alpha: 1.0)
             graphView.barLineColor = UIColor(red: 80.0/255.0, green: 227.0/255.0, blue: 194.0/255.0, alpha: 1.0)
-            graphView.shouldRoundBarCorners = true
             
-            let data = [3.3,3.0,4.25,4.4,   3.9,4.6,4.7,4.8,   4.2,3.1,2.8,3.6]
-            graphView.set(data: data, withLabels: ["Novemeber","December","January"])
+            graphView.shouldShowLabels = true
+            graphView.dataPointLabelTopMargin = 0
+            graphView.dataPointLabelBottomMargin = 10
             
+            
+            let data = [3.9,4.6,4.7,4.8,   3.3,3.0,4.25,4.4,   3.9,4.6,4.7,4.8,   4.2,3.1,2.8,3.6]
+            let labels = ["","October","","",    "","Novemeber","","",   "","December","","",  "","January","",""]
+            graphView.set(data: data, withLabels: labels)
+            
+            print(graphView.frame)
             cell.addSubview(graphView)
             
             return cell
