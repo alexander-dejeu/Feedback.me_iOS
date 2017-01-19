@@ -42,11 +42,16 @@ class ClassesController: UIViewController, UITableViewDelegate, UITableViewDataS
             let teacher1 = User(fullName : "Mrs. Steingold", profilePictureName : "users-15", role: .instructor)
             let teacher2 = User(fullName : "Mr. Jewells", profilePictureName : "users-15", role: .instructor)
             let teacher3 = User(fullName : "Mme. Wildfong", profilePictureName : "users-15", role: .instructor)
+            let teacher4 = User(fullName : "Mr. Braus", profilePictureName : "users-15", role: .instructor)
+            let teacher5 = User(fullName : "Mr. Ludt", profilePictureName : "users-15", role: .instructor)
             
             let class1 = Class(fullTitle : "French III", tickerTitle: "FL 2013", instructor : teacher3, classSubject: .language)
             let class2 = Class(fullTitle : "Calculus II", tickerTitle: "MA 1022", instructor : teacher2, classSubject: .math)
             let class3 = Class(fullTitle : "American History", tickerTitle: "HI 2242", instructor : teacher1, classSubject: .history)
-        results = [class1, class2, class3]
+            let class4 = Class(fullTitle : "Computer Science", tickerTitle: "CS 1102", instructor : teacher4, classSubject: .science)
+            let class5 = Class(fullTitle : "Twain English", tickerTitle: "EN 3404", instructor : teacher5, classSubject: .english)
+        
+        results = [class1, class2, class3,class4,class5]
         
         return results
     }

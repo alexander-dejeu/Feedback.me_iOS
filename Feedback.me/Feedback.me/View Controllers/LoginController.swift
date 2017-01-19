@@ -69,6 +69,10 @@ class LoginController: UIViewController {
         
     }
     
+    @IBAction func unwindToLogin(segue : UIStoryboardSegue){
+    
+    }
+    
     func segueToApp(){
          self.performSegue(withIdentifier: "segueFromLoginToHome", sender: nil)
     }

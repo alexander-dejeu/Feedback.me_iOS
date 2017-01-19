@@ -44,7 +44,7 @@ class DashboardController: UIViewController {
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        staticData = [[4.3,2.6,2.8,4.9,4.7],[3.2,3.2,3.2,3.1,3.5],[4.2,3.8,3.6,3.8,4.0],[3.6,3.5,3.5,3.7,4.2], [4.1,4.2,3.8,2.2, 2.8]]
+        staticData = [[4.3,2.6,2.8,4.9,4.72],[3.2,3.2,3.2,3.1,3.58],[3.3,3.8,3.6,4.6,4.04],[1.8,3.5,3.5,2.8,4.28], [2.1,4.2,3.1,2.2, 3.86]]
 
         dashboardTableView.separatorStyle = .none
         dashboardTableView.tableFooterView = UIView()
@@ -94,7 +94,7 @@ class DashboardController: UIViewController {
         let date1 = Date(timeInterval: -1000, since: date)
         let date2 = Date(timeInterval: -10000, since: date)
         let date3 = Date(timeInterval: -100000, since: date)
-        let date4 = Date(timeInterval: -40000, since: date)
+        let date4 = Date(timeInterval: -100000, since: date)
         
         return [Comment(byUser : user1, rating: 4, comment : "Wow much wow!", posted : date1, forClass : class2),
                 Comment(byUser : user2, rating: 5, comment : "Loads and aloads of text, wow look at all od this text many manny mannnny times.Loads and aloads of text, wow look at all od this text many manny mannnny times. Loads and aloads of text, wow look at all od this text many manny mannnny times. Loads and aloads of text, wow look at all od this text many manny mannnny times.", posted : date2, forClass : class1),
@@ -112,7 +112,9 @@ class DashboardController: UIViewController {
         let class1 = Class(fullTitle : "French III", tickerTitle: "FL 2013", instructor : teacher3, classSubject: .language)
         let class2 = Class(fullTitle : "Calculus II", tickerTitle: "MA 1022", instructor : teacher2, classSubject: .math)
         let class3 = Class(fullTitle : "American History", tickerTitle: "HI 2242", instructor : teacher1, classSubject: .history)
-        results = [class1, class2, class3]
+        let class4 = Class(fullTitle : "Computer Science", tickerTitle: "CS 1102", instructor : teacher2, classSubject: .science)
+        let class5 = Class(fullTitle : "Twain English", tickerTitle: "EN 3404", instructor : teacher1, classSubject: .english)
+        results = [class1,class2,class3,class4,class5]
         return results
     }
 
@@ -184,7 +186,6 @@ extension DashboardController : UITableViewDataSource {
             cell.classTickerLabel.text = classesData[indexPath.row].tickerTitle
             cell.backgroundAccentView.backgroundColor = globalColors.getAccentForClass(classSubject: classesData[indexPath.row].classSubject)
         
-//            let labels = ["one", "two", "three", "four", "five", "six"]
             graphView.set(data: data, withLabels: [])
             cell.backgroundContainerView.addSubview(graphView)
             

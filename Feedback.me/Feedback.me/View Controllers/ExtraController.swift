@@ -164,15 +164,28 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     func share(){
+        let textToShare = "Feedback-Me is awesome!😍  I am to send and recieve quality feedback at work and school🎉  Check it out on the iOS app store!"
         
+        if let myWebsite = URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id1196623665?mt=8") {
+            let objectsToShare = [textToShare, myWebsite] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            
+            // activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+            //
+            
+            activityVC.popoverPresentationController?.sourceView = self as? UIView
+            self.present(activityVC, animated: true, completion: nil)
+        }
     }
     
     func rateUs(){
-        
+        let url=URL(string:"itms-apps://itunes.apple.com/us/app/apple-store/id1196623665?mt=8")
+        UIApplication.shared.openURL(url!)
     }
     
     func logout(){
-        
+        self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
     }
 
     // MARK: - Navigation
