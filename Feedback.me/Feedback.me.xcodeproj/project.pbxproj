@@ -246,10 +246,10 @@
 			isa = PBXGroup;
 			children = (
 				FA18C48E1E21F03E0053AEC5 /* ProfileCard.swift */,
+				FA2281751E2B4C3D007B1AFE /* EditProfileCard.swift */,
 				FA18C4901E21F5660053AEC5 /* ClassCollectionViewCell.swift */,
 				FA2323A81E29EE40001594BE /* ClassCell.swift */,
 				FA2323AC1E29F9D0001594BE /* StarRatingView.swift */,
-				FA2281751E2B4C3D007B1AFE /* EditProfileCard.swift */,
 				FA1681021E2B5719006FA815 /* ClassStockCell.swift */,
 				FA1681041E2B573A006FA815 /* FeedbackCell.swift */,
 				FA1681061E2B57BA006FA815 /* SettingsCell.swift */,

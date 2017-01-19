@@ -26,7 +26,7 @@ class FormDetailController: UIViewController {
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
-        self.title = "MA 1024"
+//        self.title = "MA 1024"
         super.viewDidLoad()
         checkboxLabel.isHidden = true
         styleCards()

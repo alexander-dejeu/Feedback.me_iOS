@@ -11,7 +11,7 @@ import UIKit
 class FormsHomeController: UIViewController {
 
     @IBOutlet weak var formsScrollView: UIScrollView!
-
+    var selectedData = ""
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,18 @@ class FormsHomeController: UIViewController {
     
 
     // MARK: - Navigation
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "SegueFromFormsHomeToFormDetail"){
+            let DestViewController = segue.destination as! FormDetailController
+            DestViewController.title = selectedData
+        }
+    }
 }
 
 extension FormsHomeController : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var formClassesData = ["MA 1024", "HI 2036", "EN 1010"]
+        selectedData = formClassesData[indexPath.item]
         self.performSegue(withIdentifier: "SegueFromFormsHomeToFormDetail", sender: nil)
     }
 }
