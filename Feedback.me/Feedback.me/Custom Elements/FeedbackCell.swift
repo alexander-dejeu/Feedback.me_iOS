@@ -26,6 +26,10 @@ class FeedbackCell: UITableViewCell {
         self.backgroundColor = globalColors.background
     }
     
+    func formatDate() -> String{
+        
+    }
+    
 
     
 //    func addTapGestureRecognizer(){

@@ -240,20 +240,68 @@ extension DashboardController : UICollectionViewDataSource {
         return 3
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        if indexPath.item == 2 {
+            return CGSize(width: self.view.frame.width-16, height: 160);
+        }
         let cellWidth = (self.view.frame.width / 2.34) - 12
         let cellHeight = cellWidth * 1.57
         return CGSize(width: cellWidth, height: cellHeight);
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ResponseRate", for: indexPath as IndexPath) as! ResponseRateCollectionCell
-        
-
-//        cell.masteryLabel.text = rubric[indexPath.item][0]
-//        cell.masteryTitleLabel.text = rubric[indexPath.item][1]
-//        cell.detailLabel.text = rubric[indexPath.item][2]
-        cell.styleCell()
-        return cell
+        switch indexPath.item {
+        case 0:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CurrentSatisfaction", for: indexPath as IndexPath) as! CurrentSatisfactionCollectionCell
+            
+//            cell.styleCell()
+            return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ResponseRate", for: indexPath as IndexPath) as! ResponseRateCollectionCell
+            
+            cell.styleCell()
+            return cell
+        case 2:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LifetimeSatisfaction", for: indexPath as IndexPath)
+            
+            cell.contentView.layer.borderColor = globalColors.boarders.cgColor
+            cell.contentView.layer.borderWidth = 1
+            let graphView = ScrollableGraphView(frame: CGRect(x: 0, y: 0, width: cell.contentView.frame.width, height: cell.contentView.frame.height))
+            graphView.shouldDrawBarLayer = true
+            graphView.shouldDrawDataPoint = false
+            graphView.lineColor = .clear
+            
+            graphView.lineWidth = 1
+            graphView.rangeMax = 5
+            graphView.rangeMin = 0
+            graphView.dataPointSpacing = 21
+            graphView.shouldAddLabelsToIntermediateReferenceLines = false
+            graphView.shouldShowReferenceLines = false
+            graphView.leftmostPointPadding = 8
+            graphView.rightmostPointPadding = 8
+            graphView.topMargin = 8
+            graphView.bottomMargin = 8
+            graphView.animationDuration = 0.3
+            graphView.barWidth = 16
+            graphView.barLineWidth = 0
+            graphView.barColor = UIColor(red: 80.0/255.0, green: 227.0/255.0, blue: 194.0/255.0, alpha: 1.0)
+            graphView.barLineColor = UIColor(red: 80.0/255.0, green: 227.0/255.0, blue: 194.0/255.0, alpha: 1.0)
+            graphView.shouldRoundBarCorners = true
+            
+            let data = [3.3,3.0,4.25,4.4,   3.9,4.6,4.7,4.8,   4.2,3.1,2.8,3.6]
+            graphView.set(data: data, withLabels: ["Novemeber","December","January"])
+            
+            cell.addSubview(graphView)
+            
+            return cell
+        default:
+            print("default")
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LifetimeSatisfaction", for: indexPath as IndexPath)
+            
+            //            cell.styleCell()
+            return cell
+           
+        }
     }
 
 }
