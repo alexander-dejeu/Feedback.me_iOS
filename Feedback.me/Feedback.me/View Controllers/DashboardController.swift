@@ -195,7 +195,7 @@ extension DashboardController : UITableViewDataSource {
             cell.styleCell()
             let comment = commentsData[indexPath.row]
             
-            cell.imageView?.image = UIImage(named: comment.byUser.profilePictureName)
+            cell.imageView?.image = UIImage(named: "Up")
             cell.ratingView.addStars(rating: comment.rating)
             cell.postedAgo.text = cell.formatDate(date: comment.posted)
             cell.feedbackLabel.text = comment.comment
