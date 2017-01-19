@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate {
     //MARK: - IBOutlets
     @IBOutlet weak var userProfile: ProfileCard!
     @IBOutlet weak var editProfile: EditProfileCard!
@@ -33,6 +33,10 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         self.userProfile.closurerToHide = hideUserProfile
         self.editProfile.isHidden = true
         classesCollectionView.backgroundColor = globalColors.background
+        
+        editProfile.emailTextField.delegate = self
+        editProfile.fullNameTextField.delegate = self
+        editProfile.passwordTextField.delegate = self
     }
     
     func hideUserProfile(){
@@ -113,9 +117,20 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
     }
-
-
     
+    
+    //MARK: - Close keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Delegate method
+        // Called when 'return' key pressed. return NO to ignore.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // Called when the user click on the view (outside the UITextField).
+        self.view.endEditing(true)
+    }
 
     // MARK: - Navigation
 

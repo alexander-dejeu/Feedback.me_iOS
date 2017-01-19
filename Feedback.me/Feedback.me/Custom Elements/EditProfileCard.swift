@@ -12,6 +12,10 @@ class EditProfileCard: UIView {
     // MARK: - IBOutlets
     @IBOutlet weak var saveButton : UIButton!
     
+    @IBOutlet weak var fullNameTextField : UITextField!
+    @IBOutlet weak var emailTextField : UITextField!
+    @IBOutlet weak var passwordTextField : UITextField!
+    
     var closurerToHide : (()->())? = nil
     
     func flip(){
