@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ClassesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class ClassesController: UIViewController {
+    //MARK: - Properties
     var classroomData : [Class] = []
     
     //MARK: - View Lifecycle
@@ -18,24 +18,9 @@ class ClassesController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.title = "Classrooms"
         classroomData = getAllClasses()
     }
-    
-    
-    //MARK: - TableView
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return classroomData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as! ClassCell
-        cell.cellColorHighlight.backgroundColor = globalColors.getAccentForClass(classSubject: classroomData[indexPath.row].classSubject)
-        cell.classTitle.text = classroomData[indexPath.row].fullTitle
-        cell.classGrade.text = classroomData[indexPath.row].instructor.fullName
-        
-        cell.styleCell()
-        
-        return cell
-    }
-    
+
+
+    //MARK: - Helpers
     func getAllClasses() -> [Class]{
         var results : [Class] = []
             
@@ -55,8 +40,29 @@ class ClassesController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         return results
     }
+}
+
+
+//MARK: - UITableview DataSource
+extension ClassesController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return classroomData.count
+    }
     
-    // MARK: - Navigation
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as! ClassCell
+        cell.cellColorHighlight.backgroundColor = globalColors.getAccentForClass(classSubject: classroomData[indexPath.row].classSubject)
+        cell.classTitle.text = classroomData[indexPath.row].fullTitle
+        cell.classGrade.text = classroomData[indexPath.row].instructor.fullName
+        
+        cell.styleCell()
+        
+        return cell
+    }
+}
 
 
+//MARK: - UITableview Delegate
+extension ClassesController: UITableViewDelegate {
+    
 }

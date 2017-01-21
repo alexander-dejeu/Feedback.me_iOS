@@ -17,9 +17,11 @@ class DashboardController: UIViewController {
     @IBOutlet weak var dashboardCollectionView: UICollectionView!
     
     
+    //MARK: - Properties
     var commentsData : [Comment] = []
     var classesData : [Class] = []
     var staticData : [[Double]] = []
+    
     
     //MARK: - IBActions
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
@@ -72,9 +74,6 @@ class DashboardController: UIViewController {
     }
 
     
-    
-    // MARK: - Navigation
-    
     //MARK: - Helpers
     func createComments() -> [Comment]{
         let user1 = User(fullName : "Alexander Dejeu", profilePictureName : "users-15", role: .student)
@@ -122,6 +121,8 @@ class DashboardController: UIViewController {
 
 }
 
+
+//MARK: - UITableview DataSource
 extension DashboardController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segmentedController.selectedSegmentIndex {
@@ -182,8 +183,6 @@ extension DashboardController : UITableViewDataSource {
             
             cell.data = data
             
-//            graphView.backgroundFillColor = .green
-            
             print(graphView.center)
             print(graphView.frame)
             cell.classTickerLabel.text = classesData[indexPath.row].tickerTitle
@@ -217,6 +216,8 @@ extension DashboardController : UITableViewDataSource {
     }
 }
 
+
+//MARK: - UITableview Delegate
 extension DashboardController  : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch segmentedController.selectedSegmentIndex {
@@ -243,6 +244,8 @@ extension DashboardController  : UITableViewDelegate {
     }
 }
 
+
+//MARK: - UICollectionView DataSource
 extension DashboardController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
@@ -317,6 +320,5 @@ extension DashboardController : UICollectionViewDataSource {
            
         }
     }
-
 }
 
