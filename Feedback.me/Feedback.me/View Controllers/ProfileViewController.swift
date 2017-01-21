@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate {
+class ProfileViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var userProfile: ProfileCard!
     @IBOutlet weak var editProfile: EditProfileCard!
@@ -39,8 +39,9 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         editProfile.passwordTextField.delegate = self
     }
     
+    
+    //MARK: - Helpers
     func hideUserProfile(){
-        print("hide user profie")
         self.editProfile.isHidden = false
         self.userProfile.isHidden = true
         let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
@@ -49,6 +50,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         })
 
     }
+    
     func hideEditProfile(){
         print("hide edit profie")
         self.editProfile.isHidden = true
@@ -58,11 +60,11 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         UIView.transition(with: userProfile, duration: 1.0, options: transitionOptions, animations: {
         })
     }
-    
-    
-    // MARK: - UICollectionViewDataSource protocol
-    
-    // tell the collection view how many cells to make
+}
+
+
+// MARK: - UICollectionViewDataSource
+extension ProfileViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.items.count % 2 == 0 {
             return self.items.count
@@ -87,42 +89,39 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-    
+        
         if section == 0 {
-             return UIEdgeInsetsMake(8, 8, 8, 8)
+            return UIEdgeInsetsMake(8, 8, 8, 8)
         }
         else{
-             return UIEdgeInsetsMake(8, 12, 8, 12)
+            return UIEdgeInsetsMake(8, 12, 8, 12)
         }
     }
     
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClassCell", for: indexPath as IndexPath) as! ClassCollectionViewCell
         cell.classTitleLabel.text = items[indexPath.row].fullTitle
         cell.classInstructorLabel.text = items[indexPath.row].instructor.fullName
-        // Use the outlet in our custom class to get a reference to the UILabel in the cell
-//        cell.myLabel.text = self.items[indexPath.item]
-//        cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
         cell.styleCell()
         cell.fitLabels()
         return cell
     }
-    
-    // MARK: - UICollectionViewDelegate protocol
-    
+}
+
+
+// MARK: - UICollectionViewDelegate protocol
+extension ProfileViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
     }
-    
-    
-    //MARK: - Close keyboard
+}
+
+
+//MARK: - Close keyboard
+extension ProfileViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // Delegate method
-        // Called when 'return' key pressed. return NO to ignore.
         textField.resignFirstResponder()
         return true
     }
@@ -131,8 +130,4 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         // Called when the user click on the view (outside the UITextField).
         self.view.endEditing(true)
     }
-
-    // MARK: - Navigation
-
-
 }

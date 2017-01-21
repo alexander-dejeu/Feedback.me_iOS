@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
+class ExtraController: UIViewController, MFMailComposeViewControllerDelegate {
 
     //MARK: - IBOutlets
     @IBOutlet weak var settingsTableView : UITableView!
@@ -17,6 +17,7 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     //MARK: - Properties
     var tableviewData : [[String]] = [["Feedback", "Share", "Rate Us"], ["Logout"]]
+    
     
     //MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -28,69 +29,7 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
         self.settingsTableView.sectionHeaderHeight = 24
         self.settingsTableView.tableFooterView = createMakeSchoolFooterView()
     }
-    
-    
-    //MARK: - Tableview
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 3
-        case 1:
-            return 1
-        default:
-            return 1
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsCell
-        cell.settingLabel.text = tableviewData[indexPath.section][indexPath.row]
-        cell.accessoryType = .disclosureIndicator
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 24))
-        view.backgroundColor = globalColors.background
-        
-        let lineTop = UIView(frame: CGRect(x: 16, y: 0, width: self.view.frame.width-16, height: (1.0 / UIScreen.main.scale)))
-        let lineBottom = UIView(frame: CGRect(x: 16, y: 24, width: self.view.frame.width-16, height: (1.0 / UIScreen.main.scale)))
-        lineBottom.backgroundColor = self.settingsTableView.separatorColor
-        lineTop.backgroundColor = self.settingsTableView.separatorColor
-        if(section == 0){
-            view.addSubview(lineBottom)
-        }
-        else{
-            view.addSubview(lineTop)
-            view.addSubview(lineBottom)
-        }
-        return view
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("A cell was tapped")
-        if indexPath.section == 0 {
-            switch indexPath.row {
-            case 0:
-                feedback()
-            case 1:
-                share()
-            case 2:
-                rateUs()
-            default:
-                print(#function, "issue hit default")
-            }
-        }
-        else if indexPath.section == 1 {
-            logout()
-        }
-    }
-    
+
     
     //MARK: - Helpers
     func createMakeSchoolFooterView() -> UIView {
@@ -121,8 +60,32 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         return customMakeSchoolFooter
     }
+
+    func share(){
+        let textToShare = "Feedback-Me is awesome!😍  I am to send and recieve quality feedback at work and school🎉  Check it out on the iOS app store!"
+        
+        if let myWebsite = URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id1196623665?mt=8") {
+            let objectsToShare = [textToShare, myWebsite] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            
+            // activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+            //
+            
+            activityVC.popoverPresentationController?.sourceView = self as? UIView
+            self.present(activityVC, animated: true, completion: nil)
+        }
+    }
     
-    //MARK: Tableview Functions
+    func rateUs(){
+        let url=URL(string:"itms-apps://itunes.apple.com/us/app/apple-store/id1196623665?mt=8")
+        UIApplication.shared.openURL(url!)
+    }
+    
+    func logout(){
+        self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
+    }
+    
     // MARK Email feedback
     func feedback(){
         let mailComposeViewController = configuredMailComposeViewController()
@@ -157,37 +120,72 @@ class ExtraController: UIViewController, UITableViewDelegate, UITableViewDataSou
     // MARK: MFMailComposeViewControllerDelegate
     func mailComposeController(_ controller: MFMailComposeViewController!, didFinishWith result: MFMailComposeResult, error: Error!) {
         controller.dismiss(animated: true, completion: nil)
-        
     }
+}
 
-    
-    
-    
-    func share(){
-        let textToShare = "Feedback-Me is awesome!😍  I am to send and recieve quality feedback at work and school🎉  Check it out on the iOS app store!"
-        
-        if let myWebsite = URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id1196623665?mt=8") {
-            let objectsToShare = [textToShare, myWebsite] as [Any]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            
-            
-            // activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
-            //
-            
-            activityVC.popoverPresentationController?.sourceView = self as? UIView
-            self.present(activityVC, animated: true, completion: nil)
+
+//MARK: - UITableview Delegate
+extension ExtraController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                feedback()
+            case 1:
+                share()
+            case 2:
+                rateUs()
+            default:
+                print(#function, "issue hit default")
+            }
+        }
+        else if indexPath.section == 1 {
+            logout()
         }
     }
     
-    func rateUs(){
-        let url=URL(string:"itms-apps://itunes.apple.com/us/app/apple-store/id1196623665?mt=8")
-        UIApplication.shared.openURL(url!)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 24))
+        view.backgroundColor = globalColors.background
+        
+        let lineTop = UIView(frame: CGRect(x: 16, y: 0, width: self.view.frame.width-16, height: (1.0 / UIScreen.main.scale)))
+        let lineBottom = UIView(frame: CGRect(x: 16, y: 24, width: self.view.frame.width-16, height: (1.0 / UIScreen.main.scale)))
+        lineBottom.backgroundColor = self.settingsTableView.separatorColor
+        lineTop.backgroundColor = self.settingsTableView.separatorColor
+        if(section == 0){
+            view.addSubview(lineBottom)
+        }
+        else{
+            view.addSubview(lineTop)
+            view.addSubview(lineBottom)
+        }
+        return view
+    }
+}
+
+
+//MARK: - UITableview DataSource
+extension ExtraController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 3
+        case 1:
+            return 1
+        default:
+            return 1
+        }
     }
     
-    func logout(){
-        self.performSegue(withIdentifier: "unwindToLogin", sender: nil)
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
-
-    // MARK: - Navigation
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsCell
+        cell.settingLabel.text = tableviewData[indexPath.section][indexPath.row]
+        cell.accessoryType = .disclosureIndicator
+        return cell
+    }
 }

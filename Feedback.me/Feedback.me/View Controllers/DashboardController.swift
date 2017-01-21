@@ -155,8 +155,8 @@ extension DashboardController : UITableViewDataSource {
             let chartCenterY = cell.classTickerLabel.center.y
             
             
-            let graphView = ScrollableGraphView(frame: CGRect(x: 0, y: 0, width: 90, height: 40))
-            graphView.center = CGPoint(x: chartCenterX, y: chartCenterY)
+            let graphView = ScrollableGraphView(frame: CGRect(x: 0, y: 0, width: 70, height: 40))
+            graphView.center = CGPoint(x: chartCenterX-20, y: chartCenterY)
             graphView.lineWidth = 1
             graphView.rangeMax = 5
             graphView.rangeMin = 2.5
@@ -169,6 +169,7 @@ extension DashboardController : UITableViewDataSource {
             graphView.topMargin = 0
             graphView.bottomMargin = 0
             graphView.animationDuration = 0.1
+            graphView.backgroundColor = .clear
             
             graphView.dataPointFillColor = dataColor
             graphView.lineColor = dataColor
@@ -293,7 +294,7 @@ extension DashboardController : UICollectionViewDataSource {
             graphView.barLineWidth = 0
             graphView.barColor = UIColor(red: 80.0/255.0, green: 227.0/255.0, blue: 194.0/255.0, alpha: 1.0)
             graphView.barLineColor = UIColor(red: 80.0/255.0, green: 227.0/255.0, blue: 194.0/255.0, alpha: 1.0)
-            
+            graphView.backgroundColor = .clear
             graphView.shouldShowLabels = true
             graphView.dataPointLabelTopMargin = 0
             graphView.dataPointLabelBottomMargin = 10
