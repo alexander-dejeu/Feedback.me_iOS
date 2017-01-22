@@ -9,18 +9,21 @@
 import UIKit
 
 class LoginController: UIViewController {
-
+    //MARK: - IBOutlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField : UITextField!
     @IBOutlet weak var loginButton : UIButton!
     
     
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.layer.cornerRadius = 10
         
     }
     
+    
+    //MARK: - Helpers
     @IBAction func loginButtonTapped(_ sender: Any) {
         var validResponse = ""
         let email = emailTextField.text
@@ -42,7 +45,7 @@ class LoginController: UIViewController {
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(response)")
                 return
-
+                
             }
             
             let responseString = String(data: data, encoding: .utf8)
@@ -50,11 +53,11 @@ class LoginController: UIViewController {
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "segueFromLoginToHome", sender:self)
             }
-//            if "auth_token" in responseString! {
-//                print("VALID AUTH")
-//            }
+            //            if "auth_token" in responseString! {
+            //                print("VALID AUTH")
+            //            }
             validResponse = responseString!
-        
+            
         }
         task.resume()
         
@@ -62,13 +65,10 @@ class LoginController: UIViewController {
             print("valid")
             self.performSegue(withIdentifier: "segueFromLoginToHome", sender: nil)
         }
-        
-//        if true {
-//            self.performSegue(withIdentifier: "segueFromLoginToHome", sender: nil)
-//        }
-        
     }
+
     
+    // MARK: - Navigation
     @IBAction func unwindToLogin(segue : UIStoryboardSegue){
     
     }
@@ -76,6 +76,4 @@ class LoginController: UIViewController {
     func segueToApp(){
          self.performSegue(withIdentifier: "segueFromLoginToHome", sender: nil)
     }
-
-    // MARK: - Navigation
 }

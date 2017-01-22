@@ -9,11 +9,13 @@
 import UIKit
 
 class StarRatingView: UIView {
-
+    //MARK: - Properties
     var starWidth : CGFloat = 17.0
     var starHeight: CGFloat = 16.0
     var starSpacing : CGFloat = 2.0
     
+    
+    //MARK: - Helpers
     func addStars(rating: Int){
         clearStars()
     

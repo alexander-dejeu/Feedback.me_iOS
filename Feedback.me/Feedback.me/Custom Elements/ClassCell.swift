@@ -12,11 +12,11 @@ class ClassCell: UITableViewCell {
     //MARK: - IBOutlets
     @IBOutlet weak var cellBackgroundView : UIView!
     @IBOutlet weak var cellColorHighlight : UIView!
-//    @IBOutlet weak var extraDetailsView : UIView!
     @IBOutlet weak var classTitle : UILabel!
     @IBOutlet weak var classGrade : UILabel!
 
     
+    //MARK: - Helpers
     func styleCell(){
         cellBackgroundView.backgroundColor = .white
         cellBackgroundView.layer.borderColor = globalColors.boarders.cgColor

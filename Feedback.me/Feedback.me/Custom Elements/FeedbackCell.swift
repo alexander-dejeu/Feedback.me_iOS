@@ -18,6 +18,8 @@ class FeedbackCell: UITableViewCell {
     @IBOutlet weak var postedAgo : UILabel!
     @IBOutlet weak var postedByLabel : UILabel!
     
+    
+    //MARK: - Helpers
     func styleCell(){
         backgroundContainerView.layer.borderColor = globalColors.boarders.cgColor
         backgroundContainerView.layer.borderWidth = 1

@@ -11,5 +11,4 @@ import UIKit
 class SettingsCell: UITableViewCell {
     //MARK: - IBOutlets
     @IBOutlet weak var settingLabel : UILabel!
-
 }

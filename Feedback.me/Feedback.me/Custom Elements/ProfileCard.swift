@@ -9,15 +9,18 @@
 import UIKit
 
 class ProfileCard: UIView {
-    // MARK: IBOutlets
+    //MARK: - IBOutlets
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var fullNameLabel : UILabel!
     @IBOutlet weak var userEmailLabel : UILabel!
     @IBOutlet weak var userSchoolLabel : UILabel!
     
+    
+    //MARK: - Properties
     var closurerToHide : (()->())? = nil
     
     
+    //MARK - Helpers
     func flip(){
         let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
         

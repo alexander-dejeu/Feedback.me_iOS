@@ -10,14 +10,19 @@ import UIKit
 import ScrollableGraphView
 
 class ClassStockCell: UITableViewCell {
+    //MARK: - IBOutlets
     @IBOutlet weak var backgroundContainerView: UIView!
     @IBOutlet weak var classTickerLabel: UILabel!
     @IBOutlet weak var classChangeBackground : UIView!
     @IBOutlet weak var classChangeLabel : UILabel!
     @IBOutlet weak var backgroundAccentView: UIView!
     
+    
+    //MARK: - Properties
     var data : [Double] = []
     
+    
+    //MARK: - Helpers
     func styleCell(){
         backgroundContainerView.layer.borderColor = globalColors.boarders.cgColor
         backgroundContainerView.layer.borderWidth = 1
@@ -45,6 +50,8 @@ class ClassStockCell: UITableViewCell {
     }
 }
 
+
+//MARK: - Round decimals to specified detail
 extension Double {
     /// Rounds the double to decimal places value
     func roundTo(places:Int) -> Double {

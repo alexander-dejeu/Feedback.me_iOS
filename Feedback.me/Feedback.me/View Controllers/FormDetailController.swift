@@ -24,9 +24,9 @@ class FormDetailController: UIViewController {
     @IBOutlet weak var formHeaderBackgroundView : UIView!
     @IBOutlet weak var checkboxLabel : UILabel!
     
+    
     //MARK: - View Lifecycle
     override func viewDidLoad() {
-//        self.title = "MA 1024"
         super.viewDidLoad()
         checkboxLabel.isHidden = true
         styleCards()
@@ -53,6 +53,7 @@ class FormDetailController: UIViewController {
         teacherAssesementView.addGestureRecognizer(tapGesture3)
     }
     
+    
     // MARK: - Navigation
     func tapCard(_ sender: UITapGestureRecognizer){
         print("pls jappe")
@@ -73,7 +74,6 @@ class FormDetailController: UIViewController {
         checkboxLabel.isHidden = false
     }
 
-    
     
     //MARK: - Helpers
     func styleCards(){

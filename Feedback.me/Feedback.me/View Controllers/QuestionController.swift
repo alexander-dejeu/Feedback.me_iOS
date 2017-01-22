@@ -9,7 +9,6 @@
 import UIKit
 
 class QuestionController: UIViewController {
-
     //MARK: - IBOutlets
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var competencyLabel: UILabel!
@@ -19,6 +18,8 @@ class QuestionController: UIViewController {
     @IBOutlet weak var nextLabel : UILabel!
     @IBOutlet weak var questionScrollView: UIScrollView!
     
+    
+    //MARK: - Properties
     var rubric : [[String]] =
         [["0","Waiting", "Exhibits fewer than 1/2 of the key characteristics of the competency without consistency."],
     ["1","Beginning","Exhibits 1/2 of the key characteristics but without consistency."],
@@ -27,7 +28,6 @@ class QuestionController: UIViewController {
     ["4","Overtaking","Exhibits all the key characteristics consistently."],
     ["5","Innovating","Innovates new ways to embody and express the competency."] ]
     var selectedLevel = -1
-    
     var questions : [Question] = []
     var responses : [Response] = []
     var questionIndex = 0
@@ -72,25 +72,13 @@ class QuestionController: UIViewController {
             skillsLabel.text = formatSkills(text: questions[questionIndex].skills)
         }
         else{
-            print("we should segue back!")
             self.performSegue(withIdentifier: "unwindToFormDetail", sender: nil)
         }
-//        if selectedLevel == -1 && nextView.center.x > 0 {
-//            print("Does this happen mate?")
-//            nextView.center.x -= view.bounds.width
-//        }
-        
     }
     
     
     // MARK: - Navigation
-    
     func nextTapped(_ sender: UITapGestureRecognizer){
-//        let answer = Response(toQuestion: <#T##Question#>, answer: <#T##Any?#>)
-        print("current: \(self.nextView.center.x)")
-        
-        
-        
         nextView.isHidden = true
         self.nextView.center.x -= self.view.bounds.width
         print(self.view.bounds.width)
@@ -110,6 +98,8 @@ class QuestionController: UIViewController {
     }
 }
 
+
+//MARK: - UICollectionView Delegate
 extension QuestionController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if selectedLevel == -1 {
@@ -131,7 +121,6 @@ extension QuestionController : UICollectionViewDelegate {
             tempCell.chosenRubric = false
             tempCell.selectedStyle()
         }
-        
         let cell = masteryCollectionView.cellForItem(at: indexPath) as! MasteryCell
         selectedLevel = indexPath.item
         cell.chosenRubric = true
@@ -141,6 +130,8 @@ extension QuestionController : UICollectionViewDelegate {
     }
 }
 
+
+//MARK: - UICollectionView DataSource
 extension QuestionController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.rubric.count
@@ -152,6 +143,7 @@ extension QuestionController : UICollectionViewDataSource {
         print(cellWidth)
         return CGSize(width: cellWidth, height: cellHeight);
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "masteryCell", for: indexPath as IndexPath) as! MasteryCell
         cell.masteryLabel.text = rubric[indexPath.item][0]

@@ -9,10 +9,13 @@
 import UIKit
 
 class CurrentSatisfactionCollectionCell: UICollectionViewCell {
+    //MARK: - IBOutlets
     @IBOutlet weak var currentSatisfactionLabel : UILabel!
     @IBOutlet weak var currentPercentageChangeLabel : UILabel!
     @IBOutlet weak var lastUpdatedLabel : UILabel!
     
+    
+    //MARK: - Helpers
     func styleCell(){
         self.layer.borderWidth = 1
         self.layer.borderColor = globalColors.boarders.cgColor

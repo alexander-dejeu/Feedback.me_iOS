@@ -10,11 +10,14 @@ import UIKit
 import MBCircularProgressBar
 
 class ResponseRateCollectionCell: UICollectionViewCell {
+    //MARK: - IBOutlets
     @IBOutlet weak var title : UILabel!
     @IBOutlet weak var submitedLabel : UILabel!
     @IBOutlet weak var incompleteLabel : UILabel!
     @IBOutlet weak var progressBar : MBCircularProgressBarView!
     
+    
+    //MARK: - Helpers
     func styleCell(){
         progressBar.maxValue = 100
         progressBar.value = 78

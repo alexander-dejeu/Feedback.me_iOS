@@ -11,6 +11,8 @@ class Utilities {
 
 }
 
+
+//MARK - Add Tap Gestures to Views
 extension UIView {
     
     func addTapGesture(tapNumber : Int, target: Any , action : Selector) {

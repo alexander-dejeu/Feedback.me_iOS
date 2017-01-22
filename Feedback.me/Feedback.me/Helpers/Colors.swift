@@ -8,6 +8,7 @@
 
 import UIKit
 struct globalColors {
+    //MARK: - Colors
     static var teacher = UIColor(red: 245.0/255.0, green: 102.0/255.0, blue: 67.0/255.0, alpha: 1.0)
     static var student = UIColor(red: 0.0/255.0, green: 176.0/255.0, blue: 195.0/255.0, alpha: 1.0)
     
@@ -43,8 +44,6 @@ struct globalColors {
         }
         
     }
-
-
 }
 
 enum subject {

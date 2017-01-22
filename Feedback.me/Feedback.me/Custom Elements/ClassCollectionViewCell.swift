@@ -9,9 +9,12 @@
 import UIKit
 
 class ClassCollectionViewCell: UICollectionViewCell {
+    //MARK: - IBOutlets
     @IBOutlet weak var classTitleLabel: UILabel!
     @IBOutlet weak var classInstructorLabel: UILabel!
     
+    
+    //MARK: - Helpers
     func styleCell(){
         self.layer.borderColor = UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1.0).cgColor
         self.layer.borderWidth = 1

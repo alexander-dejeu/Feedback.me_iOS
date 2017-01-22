@@ -9,15 +9,19 @@
 import UIKit
 
 class MasteryCell: UICollectionViewCell {
+    //MARK: - IBOutlets
     @IBOutlet weak var detailView : UIView!
     @IBOutlet weak var detailLabel : UILabel!
-    
     @IBOutlet weak var rubricView : UIView!
     @IBOutlet weak var masteryLabel : UILabel!
     @IBOutlet weak var masteryTitleLabel : UILabel!
     
+    
+    //MARK: - Properties
     var chosenRubric = false
     
+    
+    //MARK: - Helpers
     func styleCell(){
         self.layer.borderColor = globalColors.student.cgColor
         self.layer.borderWidth = 1

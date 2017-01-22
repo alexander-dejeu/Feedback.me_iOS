@@ -11,13 +11,16 @@ import UIKit
 class EditProfileCard: UIView {
     // MARK: - IBOutlets
     @IBOutlet weak var saveButton : UIButton!
-    
     @IBOutlet weak var fullNameTextField : UITextField!
     @IBOutlet weak var emailTextField : UITextField!
     @IBOutlet weak var passwordTextField : UITextField!
     
+    
+    //MARK: - Properties
     var closurerToHide : (()->())? = nil
     
+    
+    //MARK: - Helpers
     func flip(){
         let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
         
