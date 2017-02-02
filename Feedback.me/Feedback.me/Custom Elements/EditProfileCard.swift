@@ -14,6 +14,9 @@ class EditProfileCard: UIView {
     @IBOutlet weak var fullNameTextField : UITextField!
     @IBOutlet weak var emailTextField : UITextField!
     @IBOutlet weak var passwordTextField : UITextField!
+    @IBOutlet weak var nameLabel : UILabel!
+    @IBOutlet weak var emailLabel : UILabel!
+    @IBOutlet weak var passwordLabel : UILabel!
     
     
     //MARK: - Properties
@@ -38,6 +41,9 @@ class EditProfileCard: UIView {
     func style(){
         self.layer.borderColor = globalColors.boarders.cgColor
         self.layer.borderWidth = 1
+        nameLabel.textColor = globalColors.coreColor
+        emailLabel.textColor = globalColors.coreColor
+        passwordLabel.textColor = globalColors.coreColor
     }
 
 }

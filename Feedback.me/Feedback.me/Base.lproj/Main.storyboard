@@ -281,8 +281,11 @@
                                             <constraint firstItem="cjX-mA-fph" firstAttribute="leading" secondItem="yxF-KQ-TzK" secondAttribute="leading" id="s7U-yU-h64"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="emailLabel" destination="8PK-Oq-czI" id="F3Y-GQ-pbu"/>
                                             <outlet property="emailTextField" destination="cjX-mA-fph" id="wsU-bq-D9n"/>
                                             <outlet property="fullNameTextField" destination="yxF-KQ-TzK" id="XIb-hP-gQc"/>
+                                            <outlet property="nameLabel" destination="8eX-Y1-JCa" id="8ES-oB-QJL"/>
+                                            <outlet property="passwordLabel" destination="baU-TO-NLd" id="6Ju-5H-rj5"/>
                                             <outlet property="passwordTextField" destination="aKf-wp-23h" id="lla-NO-SFg"/>
                                             <outlet property="saveButton" destination="tty-bn-qTL" id="lgG-vY-uwd"/>
                                         </connections>
@@ -1322,6 +1325,17 @@ RECEIVED</string>
                                     <constraint firstItem="Pb7-WN-WRs" firstAttribute="top" secondItem="pfw-iQ-zfG" secondAttribute="top" id="v1h-tj-3qO"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75M-yS-sMf">
+                                <rect key="frame" x="0.0" y="558" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.99517858028411865" green="0.79149389266967773" blue="0.038208860903978348" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="KHi-Zz-jJx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <state key="normal" title="SUBMIT 🎉">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1331,12 +1345,15 @@ RECEIVED</string>
                             <constraint firstItem="lTf-2V-NiK" firstAttribute="top" secondItem="Irz-FI-wVC" secondAttribute="top" id="Axo-qv-Q8a"/>
                             <constraint firstItem="nyR-qw-6E6" firstAttribute="leading" secondItem="Irz-FI-wVC" secondAttribute="leadingMargin" constant="-8" id="F5Q-Ng-hBT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nyR-qw-6E6" secondAttribute="trailing" constant="-8" id="GkC-fH-ksB"/>
+                            <constraint firstItem="75M-yS-sMf" firstAttribute="leading" secondItem="Irz-FI-wVC" secondAttribute="leading" id="Ndv-nU-sqa"/>
                             <constraint firstItem="69u-WO-8rF" firstAttribute="leading" secondItem="Irz-FI-wVC" secondAttribute="leadingMargin" constant="-20" id="Tkg-bX-bZ0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v1L-l1-HFd" secondAttribute="trailing" constant="-8" id="Vet-c1-hiY"/>
+                            <constraint firstItem="bqt-CM-iS2" firstAttribute="top" secondItem="75M-yS-sMf" secondAttribute="bottom" id="eQv-er-MBt"/>
                             <constraint firstItem="v1L-l1-HFd" firstAttribute="leading" secondItem="Irz-FI-wVC" secondAttribute="leadingMargin" constant="-8" id="mKF-Fg-2o8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="69u-WO-8rF" secondAttribute="trailing" constant="-20" id="mcz-Gb-Pog"/>
                             <constraint firstAttribute="bottom" secondItem="lTf-2V-NiK" secondAttribute="bottom" id="rrx-F8-k41"/>
                             <constraint firstAttribute="trailing" secondItem="rwm-zT-h3u" secondAttribute="trailingMargin" constant="24" id="x4x-QY-C3x"/>
+                            <constraint firstAttribute="trailing" secondItem="75M-yS-sMf" secondAttribute="trailing" id="y34-Kw-TKE"/>
                             <constraint firstItem="U70-UL-W61" firstAttribute="leading" secondItem="Irz-FI-wVC" secondAttribute="leadingMargin" constant="-8" id="y4d-Ud-oJB"/>
                         </constraints>
                     </view>
@@ -1350,6 +1367,7 @@ RECEIVED</string>
                         <outlet property="selfAssessementView" destination="nyR-qw-6E6" id="cre-Uz-v1k"/>
                         <outlet property="selfLabel" destination="SMq-Q7-4Ik" id="Gh8-pV-url"/>
                         <outlet property="sentLabel" destination="rwm-zT-h3u" id="rOm-WO-pXT"/>
+                        <outlet property="submitButton" destination="75M-yS-sMf" id="f9n-3h-LTc"/>
                         <outlet property="teacherAssesementView" destination="v1L-l1-HFd" id="cHt-Vo-01r"/>
                         <outlet property="teacherImageView" destination="pfw-iQ-zfG" id="pyv-Yr-UaW"/>
                         <outlet property="teacherLabel" destination="PZK-aB-IB3" id="5Dr-Np-2sf"/>
@@ -1511,7 +1529,7 @@ RECEIVED</string>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWO-Dl-Loq">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>

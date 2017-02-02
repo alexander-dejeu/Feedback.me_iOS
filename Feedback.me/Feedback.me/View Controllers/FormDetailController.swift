@@ -23,6 +23,7 @@ class FormDetailController: UIViewController {
     @IBOutlet weak var scrollView : UIScrollView!
     @IBOutlet weak var formHeaderBackgroundView : UIView!
     @IBOutlet weak var checkboxLabel : UILabel!
+    @IBOutlet weak var submitButton : UIButton!
     
     
     //MARK: - View Lifecycle
@@ -51,6 +52,36 @@ class FormDetailController: UIViewController {
         selfAssessementView.addGestureRecognizer(tapGesture)
         peerAssesementView.addGestureRecognizer(tapGesture2)
         teacherAssesementView.addGestureRecognizer(tapGesture3)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.submitedTapped(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.isEnabled = true
+        submitButton.addGestureRecognizer(tapGesture)
+        submitButton.center.x -= view.bounds.width
+        submitButton.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("How often does a viwe did appeaR?")
+        super.viewDidAppear(animated)
+        submitButton.center.x = view.center.x
+        submitButton.center.x -= view.bounds.width
+        submitButton.isHidden = false
+        UIView.animate(withDuration: 0.8, delay: 0.1,
+                       usingSpringWithDamping: 1.0,
+                       initialSpringVelocity: 0.5,
+                       options: [], animations: {
+                        self.submitButton.center.x += self.view.bounds.width
+        }, completion: nil)
+    }
+    
+    func submitedTapped(_ sender: UITapGestureRecognizer){
+        submitButton.isHidden = true
+        self.submitButton.center.x -= self.view.bounds.width
     }
     
     
