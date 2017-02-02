@@ -51,6 +51,8 @@ class LoginController: UIViewController {
             let responseString = String(data: data, encoding: .utf8)
             print("responseString = \(responseString!)")
             DispatchQueue.main.async {
+                let testRole : role = .student
+                globalColors.setGlobalColorsBasedOnRole(role : testRole)
                 self.performSegue(withIdentifier: "segueFromLoginToHome", sender:self)
             }
             //            if "auth_token" in responseString! {

@@ -34,6 +34,8 @@ class ProfileViewController: UIViewController {
         self.editProfile.isHidden = true
         classesCollectionView.backgroundColor = globalColors.background
         
+        self.navigationItem.rightBarButtonItem?.tintColor = globalColors.coreColor
+        
         editProfile.emailTextField.delegate = self
         editProfile.fullNameTextField.delegate = self
         editProfile.passwordTextField.delegate = self

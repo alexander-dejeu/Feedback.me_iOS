@@ -32,6 +32,7 @@ class EditProfileCard: UIView {
     func setupSave(){
         self.saveButton.addTarget(self, action: #selector(flip), for: .touchUpInside)
         saveButton.layer.cornerRadius = 5
+        self.saveButton.backgroundColor = globalColors.coreColor
     }
     
     func style(){
